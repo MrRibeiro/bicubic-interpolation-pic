@@ -1,0 +1,10 @@
+
+# 1 "newmain.c"
+
+# 3
+unsigned rom char sourcef[] = {80, 54, 10, 50, 49, 32, 50, 48, 10, 50, 53, 53};
+
+void main() {
+while(1);
+}
+
