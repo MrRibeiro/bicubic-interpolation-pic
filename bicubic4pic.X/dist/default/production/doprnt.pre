@@ -1,5 +1,5 @@
 
-# 1 "newmain.c"
+# 1 "C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\doprnt.c"
 
 # 10 "../../../../../../Program Files (x86)/Microchip/xc8/v2.00/pic/include/c99\bits/alltypes.h"
 typedef void * va_list[1];
@@ -131,6 +131,44 @@ char *ctermid(char *);
 # 169
 char *tempnam(const char *, const char *);
 
+# 10 "../../../../../../Program Files (x86)/Microchip/xc8/v2.00/pic/include/c99\ctype.h"
+int isalnum(int);
+int isalpha(int);
+int isblank(int);
+int iscntrl(int);
+int isdigit(int);
+int isgraph(int);
+int islower(int);
+int isprint(int);
+int ispunct(int);
+int isspace(int);
+int isupper(int);
+int isxdigit(int);
+int tolower(int);
+int toupper(int);
+
+# 409 "../../../../../../Program Files (x86)/Microchip/xc8/v2.00/pic/include/c99\bits/alltypes.h"
+typedef struct __locale_struct * locale_t;
+
+# 43 "../../../../../../Program Files (x86)/Microchip/xc8/v2.00/pic/include/c99\ctype.h"
+int isalnum_l(int, locale_t);
+int isalpha_l(int, locale_t);
+int isblank_l(int, locale_t);
+int iscntrl_l(int, locale_t);
+int isdigit_l(int, locale_t);
+int isgraph_l(int, locale_t);
+int islower_l(int, locale_t);
+int isprint_l(int, locale_t);
+int ispunct_l(int, locale_t);
+int isspace_l(int, locale_t);
+int isupper_l(int, locale_t);
+int isxdigit_l(int, locale_t);
+int tolower_l(int, locale_t);
+int toupper_l(int, locale_t);
+
+int isascii(int);
+int toascii(int);
+
 # 28 "../../../../../../Program Files (x86)/Microchip/xc8/v2.00/pic/include/c99\bits/alltypes.h"
 typedef long wchar_t;
 
@@ -186,9 +224,6 @@ uldiv_t uldiv (unsigned long, unsigned long);
 # 104
 size_t __ctype_get_mb_cur_max(void);
 
-# 409 "../../../../../../Program Files (x86)/Microchip/xc8/v2.00/pic/include/c99\bits/alltypes.h"
-typedef struct __locale_struct * locale_t;
-
 # 27 "../../../../../../Program Files (x86)/Microchip/xc8/v2.00/pic/include/c99\string.h"
 void *memcpy (void *, const void *, size_t);
 void *memmove (void *, const void *, size_t);
@@ -236,6 +271,31 @@ size_t strxfrm_l (char *, const char *, size_t, locale_t);
 
 # 80
 void *memccpy (void *, const void *, int, size_t);
+
+
+# 10 "../../../../../../Program Files (x86)/Microchip/xc8/v2.00/pic/include/c99\stdarg.h"
+#pragma intrinsic(__va_start)
+#pragma intrinsic(__va_arg)
+
+extern void * __va_start(void);
+extern void * __va_arg(void *, ...);
+
+# 10 "../../../../../../Program Files (x86)/Microchip/xc8/v2.00/pic/include/c99\errno.h"
+extern int errno;
+
+# 12 "../../../../../../Program Files (x86)/Microchip/xc8/v2.00/pic/include/c99\conio.h"
+extern void init_uart(void);
+
+extern char getch(void);
+extern char getche(void);
+extern void putch(char);
+extern void ungetch(char);
+
+extern __bit kbhit(void);
+
+# 23
+extern char * cgets(char *);
+extern void cputs(const char *);
 
 # 135 "../../../../../../Program Files (x86)/Microchip/xc8/v2.00/pic/include/c99\bits/alltypes.h"
 typedef unsigned long uintptr_t;
@@ -607,415 +667,316 @@ double y0(double);
 double y1(double);
 double yn(int, double);
 
-# 80 "../../../../../../Program Files (x86)/Microchip/xc8/v2.00/pic/include/c99\bits/alltypes.h"
-typedef long long time_t;
-
-# 291
-typedef void * timer_t;
+# 8 "../../../../../../Program Files (x86)/Microchip/xc8/v2.00/pic/include/c99\float.h"
+int __flt_rounds(void);
 
 
+# 12 "C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\doprnt.c"
+#pragma warning disable 350
 
+# 358
+const static unsigned long dpowers[] = {1, 10, 100, 1000, 10000,
 
-typedef int clockid_t;
+100000, 1000000, 10000000, 100000000,
+1000000000
 
-
-
-
-typedef long clock_t;
-
-# 311
-struct timespec { time_t tv_sec; long tv_nsec; };
-
-# 317
-typedef int pid_t;
-
-# 40 "../../../../../../Program Files (x86)/Microchip/xc8/v2.00/pic/include/c99\time.h"
-struct tm {
-int tm_sec;
-int tm_min;
-int tm_hour;
-int tm_mday;
-int tm_mon;
-int tm_year;
-int tm_wday;
-int tm_yday;
-int tm_isdst;
-long __tm_gmtoff;
-const char *__tm_zone;
 };
 
-clock_t clock (void);
-time_t time (time_t *);
-double difftime (time_t, time_t);
-time_t mktime (struct tm *);
-size_t strftime (char *, size_t, const char *, const struct tm *);
-struct tm *gmtime (const time_t *);
-struct tm *localtime (const time_t *);
-char *asctime (const struct tm *);
-char *ctime (const time_t *);
-int timespec_get(struct timespec *, int);
-
-# 73
-size_t strftime_l (char * , size_t, const char * , const struct tm * , locale_t);
-
-struct tm *gmtime_r (const time_t *, struct tm *);
-struct tm *localtime_r (const time_t *, struct tm *);
-char *asctime_r (const struct tm *, char *);
-char *ctime_r (const time_t *, char *);
-
-void tzset (void);
-
-struct itimerspec {
-struct timespec it_interval;
-struct timespec it_value;
-};
-
-# 102
-int nanosleep (const struct timespec *, struct timespec *);
-int clock_getres (clockid_t, struct timespec *);
-int clock_gettime (clockid_t, struct timespec *);
-int clock_settime (clockid_t, const struct timespec *);
-int clock_nanosleep (clockid_t, int, const struct timespec *, struct timespec *);
-int clock_getcpuclockid (pid_t, clockid_t *);
-
-struct sigevent;
-int timer_create (clockid_t, struct sigevent *, timer_t *);
-int timer_delete (timer_t);
-int timer_settime (timer_t, int, const struct itimerspec *, struct itimerspec *);
-int timer_gettime (timer_t, struct itimerspec *);
-int timer_getoverrun (timer_t);
-
-extern char *tzname[2];
-
-# 122
-char *strptime (const char *, const char *, struct tm *);
-extern int daylight;
-extern long timezone;
-extern int getdate_err;
-struct tm *getdate (const char *);
-
-# 9 "newmain.c"
-const unsigned char sourcef[] = {80, 54, 10, 50, 49, 32, 50, 48, 10, 50, 53, 53,
-10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 248, 160, 104, 248, 160, 104, 248, 160,
-104, 248, 160, 104, 248, 160, 104, 248, 160, 104, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-0, 0, 0, 0, 0, 248, 248, 248, 248, 160, 104, 248, 248, 248, 248, 160, 104, 248,
-160, 104, 248, 248, 248, 248, 160, 104, 248, 248, 248, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-0, 0, 0, 248, 160, 104, 248, 160, 104, 0, 0, 0, 248, 160, 104, 248, 160, 104, 0,
-0, 0, 248, 160, 104, 248, 160, 104, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 248, 160,
-104, 248, 160, 104, 0, 0, 0, 248, 160, 104, 248, 160, 104, 0, 0, 0, 248, 160, 104,
-248, 160, 104, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 248, 64, 40, 248, 248, 248, 248,
-160, 104, 248, 160, 104, 248, 160, 104, 248, 160, 104, 248, 248, 248, 248, 64, 40,
-0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-0, 0, 0, 0, 0, 0, 0, 0, 0, 248, 64, 40, 248, 248, 248, 248, 248, 248, 248, 248,
-248, 248, 248, 248, 248, 248, 248, 248, 248, 248, 248, 248, 248, 248, 248, 248,
-248, 64, 40, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-0, 0, 0, 0, 0, 0, 0, 248, 64, 40, 248, 64, 40, 248, 248, 248, 248, 248, 248, 0, 0,
-0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 248, 248, 248, 248, 248, 248, 248, 64, 40, 248, 64,
-40, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 248,
-64, 40, 248, 64, 40, 248, 248, 248, 248, 248, 248, 248, 64, 40, 248, 248, 248,
-248, 248, 248, 248, 248, 248, 248, 248, 248, 248, 64, 40, 248, 248, 248, 248, 248,
-248, 248, 64, 40, 248, 64, 40, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-0, 248, 160, 104, 248, 64, 40, 248, 64, 40, 248, 248, 248, 248, 64, 40, 248, 64,
-40, 248, 248, 248, 248, 248, 248, 248, 248, 248, 248, 248, 248, 248, 64, 40, 248,
-64, 40, 248, 248, 248, 248, 64, 40, 248, 64, 40, 248, 160, 104, 0, 0, 0, 0, 0, 0,
-0, 0, 0, 0, 0, 0, 0, 0, 0, 248, 160, 104, 248, 64, 40, 248, 64, 40, 248, 64, 40,
-248, 64, 40, 248, 64, 40, 248, 248, 248, 248, 248, 248, 248, 248, 248, 248, 248,
-248, 248, 64, 40, 248, 64, 40, 248, 64, 40, 248, 64, 40, 248, 64, 40, 248, 160,
-104, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 248, 160, 104, 248, 64, 40, 248,
-64, 40, 248, 64, 40, 0, 0, 0, 248, 64, 40, 248, 64, 40, 248, 248, 248, 248, 248,
-248, 248, 64, 40, 248, 64, 40, 0, 0, 0, 248, 64, 40, 248, 64, 40, 248, 64, 40, 248,
-160, 104, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 248, 64, 40, 248,
-64, 40, 248, 64, 40, 0, 0, 0, 248, 64, 40, 248, 64, 40, 248, 64, 40, 248, 64, 40,
-248, 64, 40, 248, 64, 40, 0, 0, 0, 248, 64, 40, 248, 64, 40, 248, 64, 40, 0, 0, 0,
-0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 248, 64, 40, 248, 64, 40,
-248, 64, 40, 0, 0, 0, 248, 64, 40, 248, 64, 40, 248, 64, 40, 248, 64, 40, 248, 64,
-40, 248, 64, 40, 0, 0, 0, 248, 64, 40, 248, 64, 40, 248, 64, 40, 0, 0, 0, 0, 0, 0,
-0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 248, 64, 40, 0, 0, 0, 248,
-64, 40, 248, 64, 40, 248, 64, 40, 248, 64, 40, 248, 64, 40, 248, 64, 40, 248, 64,
-40, 248, 64, 40, 0, 0, 0, 248, 64, 40, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 248, 64, 40, 248, 64, 40,
-248, 64, 40, 248, 64, 40, 248, 64, 40, 248, 64, 40, 248, 64, 40, 248, 64, 40, 0, 0,
-0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-0, 0, 0, 0, 0, 0, 248, 64, 40, 248, 64, 40, 248, 160, 104, 248, 160, 104, 248, 64, 40,
-248, 64, 40, 248, 160, 104, 248, 160, 104, 248, 64, 40, 248, 64, 40, 0, 0, 0, 0,
-0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-0, 0, 0, 0, 0, -1};
-
-
-typedef unsigned char uint8_t;
-typedef signed char int8_t;
-typedef unsigned short uint16_t;
-typedef signed short int16_t;
-
-# 90
-typedef struct {
-
-unsigned char red,green,blue;
-} PPMPixel;
-
-
-typedef struct {
-int x, y;
-PPMPixel *data;
-} PPMImage;
-
-
-static void readPPM(PPMImage *img, const char *filename) {
-
-char buff[16];
-
-int c, rgb_comp_color;
-int chread = 0;
-
-# 117
-memcpy(buff, sourcef, sizeof(buff));
-
-chread = 2;
-
-
-if(buff[0] != 'P' || buff[1] != '6') {
-
-fprintf((stderr), "Invalid image format (must be 'P6')\n");
-exit(1);
-}
-
-# 138
-while(sourcef[chread] == '\n') chread++;
-
-
-sscanf(sourcef + chread, "%d %d", &img->x, &img->y);
-
-chread += 6;
-
-# 155
-printf("chread 2: %s\n", sourcef+chread);
-
-
-sscanf((sourcef + chread), "%d", &rgb_comp_color);
-
-chread += 3;
-
-while(sourcef[chread] == '\n') chread++;
-
-printf("rgb_comp_color: %d\n", rgb_comp_color);
-
-printf("chread 3: %d", chread);
-
-
-if(rgb_comp_color!= 255) {
-fprintf((stderr), "'%s' does not have 8-bits components\n", filename);
-exit(1);
-}
+# 396
+extern const double _powers_[], _npowers_[];
 
 
 
+extern unsigned long _div_to_l_(double, double);
 
-img->data = (sourcef + chread);
+extern unsigned long _tdiv_to_l_(float, float);
 
-# 188
-}
-
-void writeSerial(uint8_t sample[3]){
-
-}
-
-void writePPM(const char *filename, PPMImage *img)
+# 416
+static double
+fround(unsigned char prec)
 {
-FILE *fp;
 
-fp = fopen(filename, "wb");
-if (!fp) {
-fprintf((stderr), "Unable to open file '%s'\n", filename);
-exit(1);
+
+if(prec>=110)
+return 0.5 * _npowers_[prec/100U+18U] * _npowers_[(prec%100U)/10U+9U] * _npowers_[prec%10U];
+else if(prec > 10)
+return 0.5 * _npowers_[prec/10U+9U] * _npowers_[prec%10U];
+return 0.5 * _npowers_[prec];
+}
+
+# 432
+static double
+scale(signed char scl)
+{
+
+if(scl < 0) {
+scl = -scl;
+if(scl>=110)
+return _npowers_[(unsigned char)(scl/100+18)] * _npowers_[(unsigned char)((scl%100)/10+9)] * _npowers_[(unsigned char)(scl%10)];
+else if(scl > 10)
+return _npowers_[(unsigned char)(scl/10+9)] * _npowers_[(unsigned char)(scl%10)];
+return _npowers_[(unsigned char)scl];
+}
+if(scl>=110)
+return _powers_[(unsigned char)(scl/100+18)] * _powers_[(unsigned char)((scl%100)/10+9)] * _powers_[(unsigned char)(scl%10)];
+else if(scl > 10)
+return _powers_[(unsigned char)(scl/10+9)] * _powers_[(unsigned char)(scl%10)];
+return _powers_[(unsigned char)scl];
+}
+
+# 463
+int
+
+# 472
+printf(const char * f, ...)
+{
+va_list ap;
+
+# 507
+char c;
+
+int width;
+
+
+int prec;
+
+# 520
+unsigned short flag;
+
+# 527
+char d;
+double fval;
+int eexp;
+
+# 535
+union {
+unsigned long vd;
+double integ;
+} tmpval;
+
+unsigned long val;
+unsigned len;
+const char * cp;
+
+
+*ap = __va_start();
+
+
+while((c = *f++)) {
+
+if(c != '%')
+
+{
+(putch(c) );
+continue;
+}
+
+# 560
+flag = 0;
+
+# 654
+switch(c = *f++) {
+
+case 0:
+goto alldone;
+
+# 681
+case 'f':
+flag |= 0x400;
+break;
+
+# 716
+case 'd':
+case 'i':
+break;
+
+# 747
+case 's':
+
+# 753
+cp = (*(const char * *)__va_arg(*(const char * **)ap, (const char *)0));
+
+# 759
+if(!cp)
+cp = "(null)";
+
+# 796
+while(*cp)
+(putch(*cp++) );
+continue;
+
+# 821
+default:
+
+# 832
+continue;
+
+# 841
 }
 
 
-fprintf(fp, "P6\n");
+if(flag & (0x700)) {
+
+# 848
+prec = 6;
+fval = (*(double *)__va_arg(*(double **)ap, (double)0));
+if(fval < 0.0) {
+fval = -fval;
+flag |= 0x03;
+}
+eexp = 0;
+if( fval!=0) {
+(void)(*(&eexp) = ((*(unsigned long *)&fval >> 15) & 255) - 126);
+eexp--;
+eexp *= 3;
+eexp /= 10;
+if(eexp < 0)
+eexp--;
 
 
-fprintf(fp, "# Created by %s\n","FELIXKLEMM");
 
-
-fprintf(fp, "%d %d\n",img->x,img->y);
-
-
-fprintf(fp, "%d\n",255);
-
-
-fwrite(img->data, 3 * img->x, img->y, fp);
-fclose(fp);
+tmpval.integ = scale(-eexp);
+tmpval.integ *= fval;
+if(tmpval.integ < 1.0)
+eexp--;
+else if(tmpval.integ >= 10.0)
+eexp++;
 }
 
+# 1131
+if(prec <= 12)
+fval += fround((unsigned int)prec);
 
-float cubic_hermite(float A, float B, float C, float D, float t) {
+
+if((eexp > 9)||(fval != 0 && (unsigned long)fval == 0 && eexp > 1)) {
 
 
-float a = -A / 2.0f + (3.0f*B) / 2.0f - (3.0f*C) / 2.0f + D / 2.0f;
-float b = A - (5.0f*B) / 2.0f + 2.0f*C - D / 2.0f;
-float c = -A / 2.0f + C / 2.0f;
-float d = B;
 
-return a*t*t*t + b*t*t + c*t + d;
+if(tmpval.integ < 4.294967296){
+eexp -= (sizeof dpowers/sizeof dpowers[0])-1;
+}else{
+eexp -= (sizeof dpowers/sizeof dpowers[0])-2;
+}
+tmpval.integ = scale(eexp);
+val = ((sizeof(double)== 3) ? _tdiv_to_l_(fval,tmpval.integ) : _div_to_l_(fval,tmpval.integ));
+
+
+fval = 0.0;
+} else {
+val = (unsigned long)fval;
+fval -= (double)val;
+eexp = 0;
 }
 
-void get_pixel_clamped(PPMImage *source_image, int x, int y, uint8_t temp[]) {
-if(x < 0) { x = 0; } else if(x > source_image->x - 1) { x = source_image->x - 1; };
-if(y < 0) { y = 0; } else if(y > source_image->y - 1) { y = source_image->y - 1; };
+for(c = 1 ; c != (sizeof dpowers/sizeof dpowers[0]) ; c++)
+if(val < dpowers[c])
+break;
 
-temp[0] = source_image->data[x+(21*y)].red;
-temp[1] = source_image->data[x+(21*y)].green;
-temp[2] = source_image->data[x+(21*y)].blue;
+# 1194
+{
+
+# 1207
+if(flag & 0x03)
+
+(putch('-') );
+
+# 1214
 }
-
-void sample_bicubic(PPMImage *source_image, float u, float v, uint8_t sample[]) {
-float x = (u * source_image->x)-0.5;
-int xint = (int)x;
-float xfract = x-floorf(x);
-
-float y = (v * source_image->y) - 0.5;
-int yint = (int)y;
-float yfract = y - floorf(y);
-
-int i;
-
-uint8_t p00[3];
-uint8_t p10[3];
-uint8_t p20[3];
-uint8_t p30[3];
-
-uint8_t p01[3];
-uint8_t p11[3];
-uint8_t p21[3];
-uint8_t p31[3];
-
-uint8_t p02[3];
-uint8_t p12[3];
-uint8_t p22[3];
-uint8_t p32[3];
-
-uint8_t p03[3];
-uint8_t p13[3];
-uint8_t p23[3];
-uint8_t p33[3];
+while(c--) {
 
 
 
-get_pixel_clamped(source_image, xint - 1, yint - 1, p00);
-get_pixel_clamped(source_image, xint + 0, yint - 1, p10);
-get_pixel_clamped(source_image, xint + 1, yint - 1, p20);
-get_pixel_clamped(source_image, xint + 2, yint - 1, p30);
-
-
-get_pixel_clamped(source_image, xint - 1, yint + 0, p01);
-get_pixel_clamped(source_image, xint + 0, yint + 0, p11);
-get_pixel_clamped(source_image, xint + 1, yint + 0, p21);
-get_pixel_clamped(source_image, xint + 2, yint + 0, p31);
-
-
-get_pixel_clamped(source_image, xint - 1, yint + 1, p02);
-get_pixel_clamped(source_image, xint + 0, yint + 1, p12);
-get_pixel_clamped(source_image, xint + 1, yint + 1, p22);
-get_pixel_clamped(source_image, xint + 2, yint + 1, p32);
-
-
-get_pixel_clamped(source_image, xint - 1, yint + 2, p03);
-get_pixel_clamped(source_image, xint + 0, yint + 2, p13);
-get_pixel_clamped(source_image, xint + 1, yint + 2, p23);
-get_pixel_clamped(source_image, xint + 2, yint + 2, p33);
-
-
-for (i = 0; i < 3; i++) {
-float col0 = cubic_hermite(p00[i], p10[i], p20[i], p30[i], xfract);
-float col1 = cubic_hermite(p01[i], p11[i], p21[i], p31[i], xfract);
-float col2 = cubic_hermite(p02[i], p12[i], p22[i], p32[i], xfract);
-float col3 = cubic_hermite(p03[i], p13[i], p23[i], p33[i], xfract);
-
-float value = cubic_hermite(col0, col1, col2, col3, yfract);
-
-if(value < 0.0f) { value = 0.0f; } else if(value > 255.0f) { value = 255.0f; };
-
-sample[i] = (uint8_t)value;
-
-
-
+{
+tmpval.vd = val/dpowers[c];
+tmpval.vd %= 10;
+(putch('0' + tmpval.vd) );
 }
 
 }
-
-
-void resize_image(PPMImage *source_image, PPMImage *destination_image, float scale) {
-uint8_t sample[3];
-int y, x;
-
-destination_image->x = (long)((float)(source_image->x)*scale);
-destination_image->y = (long)((float)(source_image->y)*scale);
-
-for (y = 0; y < destination_image->y; y++) {
-
-float v = (float)y / (float)(destination_image->y - 1);
-
-for (x = 0; x < destination_image->x; ++x) {
-
-float u = (float)x / (float)(destination_image->x - 1);
-
-sample_bicubic(source_image, u, v, sample);
-
-writeSerial(sample);
-
-
-
-
+while(eexp > 0) {
+(putch('0') );
+eexp--;
 }
-}
+if(prec > (int)((sizeof dpowers/sizeof dpowers[0])-2))
+c = (sizeof dpowers/sizeof dpowers[0])-2;
+else
+c = (char)prec;
+prec -= (int)c;
+
+
+
+if(c)
+
+(putch('.') );
+
+# 1246
+val = (unsigned long)(fval * scale((signed char)c));
+while(c--) {
+tmpval.vd = val/dpowers[c];
+tmpval.vd %= 10;
+(putch('0' + tmpval.vd) );
+val %= dpowers[c];
 }
 
-float get_scale(){
-float scale;
-printf("Digite uma escala(float): ");
-scanf("%f", &scale);
-return scale;
+while(prec) {
+(putch('0') );
+prec--;
+}
+
+# 1264
+continue;
+}
+
+# 1272
+{
+
+# 1278
+val = (long)(*(int *)__va_arg(*(int **)ap, (int)0));
+
+if((long)val < 0) {
+flag |= 0x03;
+val = -val;
+}
+
+}
+
+# 1324
+for(c = 1 ; c != sizeof dpowers/sizeof dpowers[0] ; c++)
+if(val < dpowers[c])
+break;
+
+# 1441
+{
+
+# 1457
+if(flag & 0x03)
+(putch('-') );
+
+# 1488
 }
 
 
-int main() {
+prec = c;
 
-clock_t tempo;
+while(prec--) {
 
+# 1497
+{
 
-const float scale = 2;
+# 1508
+c = (val / dpowers[prec]) % 10 + '0';
 
-tempo = clock();
+# 1542
+}
+(putch(c) );
+}
 
-# 365
-PPMImage source_image;
-PPMImage destination_image;
+# 1552
+}
 
-# 372
-if(remove("imgs/lozman_out.ppm") == 0)
-printf("Deleting old image...\n\n");
+alldone:
 
-
-readPPM(&source_image, "imgs/lozman.ppm");
-
-
-resize_image(&source_image, &destination_image, scale);
-
-
-
-
-printf("Tempo de interpolacao(ms): %f\n",(clock() - tempo) / (double)1000000L);
+# 1559
+return 0;
 }
 

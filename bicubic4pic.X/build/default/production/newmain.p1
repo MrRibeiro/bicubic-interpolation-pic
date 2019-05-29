@@ -1,0 +1,2457 @@
+Version 3.2 HI-TECH Software Intermediate Code
+"90 newmain.c
+[s S13 `uc 1 `uc 1 `uc 1 ]
+[n S13 . red green blue ]
+"96
+[s S14 `i 1 `i 1 `*S13 1 ]
+[n S14 . x y data ]
+"27 ../../../../../../Program Files (x86)/Microchip/xc8/v2.00/pic/include/c99\string.h
+[v _memcpy `(*v ~T0 @X0 0 ef3`*v`*Cv`ui ]
+"397 ../../../../../../Program Files (x86)/Microchip/xc8/v2.00/pic/include/c99\bits/alltypes.h
+[s S1 ]
+[n S1 _IO_FILE ]
+"114 ../../../../../../Program Files (x86)/Microchip/xc8/v2.00/pic/include/c99\stdio.h
+[v _fprintf `(i ~T0 @X0 0 e1v`*S1`*Cuc ]
+[v F17 `*S1 ~T0 @X0 1 t ]
+"59
+[v _stderr `C*S1 ~T0 @X0 0 e ]
+"54 ../../../../../../Program Files (x86)/Microchip/xc8/v2.00/pic/include/c99\stdlib.h
+[v _exit `(v ~T0 @X0 0 ef1`i ]
+"125 ../../../../../../Program Files (x86)/Microchip/xc8/v2.00/pic/include/c99\stdio.h
+[v _sscanf `(i ~T0 @X0 0 e1v`*Cuc`*Cuc ]
+"113
+[v _printf `(i ~T0 @X0 0 ev`*Cuc ]
+"65
+[v _fopen `(*S1 ~T0 @X0 0 ef2`*Cuc`*Cuc ]
+"85
+[v _fwrite `(ui ~T0 @X0 0 ef4`*Cv`ui`ui`*S1 ]
+"67
+[v _fclose `(i ~T0 @X0 0 ef1`*S1 ]
+"302 ../../../../../../Program Files (x86)/Microchip/xc8/v2.00/pic/include/c99\math.h
+[v _floorf `(f ~T0 @X0 0 ef1`f ]
+"123 ../../../../../../Program Files (x86)/Microchip/xc8/v2.00/pic/include/c99\stdio.h
+[v _scanf `(i ~T0 @X0 0 ev`*Cuc ]
+[p mainexit ]
+"54 ../../../../../../Program Files (x86)/Microchip/xc8/v2.00/pic/include/c99\time.h
+[v _clock `(l ~T0 @X0 0 ef ]
+"69 ../../../../../../Program Files (x86)/Microchip/xc8/v2.00/pic/include/c99\stdio.h
+[v _remove `(i ~T0 @X0 0 ef1`*Cuc ]
+[; ;alltypes.h: 10: typedef void * va_list[1];
+[; ;alltypes.h: 15: typedef void * __isoc_va_list[1];
+[; ;alltypes.h: 127: typedef unsigned size_t;
+[; ;alltypes.h: 145: typedef long ssize_t;
+[; ;alltypes.h: 244: typedef long long off_t;
+[; ;alltypes.h: 397: typedef struct _IO_FILE FILE;
+[; ;c99\stdio.h: 52: typedef union _G_fpos64_t {
+[; ;c99\stdio.h: 53: char __opaque[16];
+[; ;c99\stdio.h: 54: double __align;
+[; ;c99\stdio.h: 55: } fpos_t;
+[; ;c99\stdio.h: 57: extern FILE *const stdin;
+[; ;c99\stdio.h: 58: extern FILE *const stdout;
+[; ;c99\stdio.h: 59: extern FILE *const stderr;
+[; ;c99\stdio.h: 65: FILE *fopen(const char *, const char *);
+[; ;c99\stdio.h: 66: FILE *freopen(const char *, const char *, FILE *);
+[; ;c99\stdio.h: 67: int fclose(FILE *);
+[; ;c99\stdio.h: 69: int remove(const char *);
+[; ;c99\stdio.h: 70: int rename(const char *, const char *);
+[; ;c99\stdio.h: 72: int feof(FILE *);
+[; ;c99\stdio.h: 73: int ferror(FILE *);
+[; ;c99\stdio.h: 74: int fflush(FILE *);
+[; ;c99\stdio.h: 75: void clearerr(FILE *);
+[; ;c99\stdio.h: 77: int fseek(FILE *, long, int);
+[; ;c99\stdio.h: 78: long ftell(FILE *);
+[; ;c99\stdio.h: 79: void rewind(FILE *);
+[; ;c99\stdio.h: 81: int fgetpos(FILE *, fpos_t *);
+[; ;c99\stdio.h: 82: int fsetpos(FILE *, const fpos_t *);
+[; ;c99\stdio.h: 84: size_t fread(void *, size_t, size_t, FILE *);
+[; ;c99\stdio.h: 85: size_t fwrite(const void *, size_t, size_t, FILE *);
+[; ;c99\stdio.h: 87: int fgetc(FILE *);
+[; ;c99\stdio.h: 88: int getc(FILE *);
+[; ;c99\stdio.h: 89: int getchar(void);
+[; ;c99\stdio.h: 90: int ungetc(int, FILE *);
+[; ;c99\stdio.h: 92: int fputc(int, FILE *);
+[; ;c99\stdio.h: 93: int putc(int, FILE *);
+[; ;c99\stdio.h: 94: int putchar(int);
+[; ;c99\stdio.h: 96: char *fgets(char *, int, FILE *);
+[; ;c99\stdio.h: 98: char *gets(char *);
+[; ;c99\stdio.h: 101: int fputs(const char *, FILE *);
+[; ;c99\stdio.h: 102: int puts(const char *);
+[; ;c99\stdio.h: 113: int printf(const char *, ...);
+[; ;c99\stdio.h: 114: int fprintf(FILE *, const char *, ...);
+[; ;c99\stdio.h: 115: int sprintf(char *, const char *, ...);
+[; ;c99\stdio.h: 116: int snprintf(char *, size_t, const char *, ...);
+[; ;c99\stdio.h: 118: int vprintf(const char *, __isoc_va_list);
+[; ;c99\stdio.h: 119: int vfprintf(FILE *, const char *, __isoc_va_list);
+[; ;c99\stdio.h: 120: int vsprintf(char *, const char *, __isoc_va_list);
+[; ;c99\stdio.h: 121: int vsnprintf(char *, size_t, const char *, __isoc_va_list);
+[; ;c99\stdio.h: 123: int scanf(const char *, ...);
+[; ;c99\stdio.h: 124: int fscanf(FILE *, const char *, ...);
+[; ;c99\stdio.h: 125: int sscanf(const char *, const char *, ...);
+[; ;c99\stdio.h: 126: int vscanf(const char *, __isoc_va_list);
+[; ;c99\stdio.h: 127: int vfscanf(FILE *, const char *, __isoc_va_list);
+[; ;c99\stdio.h: 128: int vsscanf(const char *, const char *, __isoc_va_list);
+[; ;c99\stdio.h: 130: void perror(const char *);
+[; ;c99\stdio.h: 132: int setvbuf(FILE *, char *, int, size_t);
+[; ;c99\stdio.h: 133: void setbuf(FILE *, char *);
+[; ;c99\stdio.h: 135: char *tmpnam(char *);
+[; ;c99\stdio.h: 136: FILE *tmpfile(void);
+[; ;c99\stdio.h: 141: FILE *fmemopen(void *, size_t, const char *);
+[; ;c99\stdio.h: 142: FILE *open_memstream(char **, size_t *);
+[; ;c99\stdio.h: 143: FILE *fdopen(int, const char *);
+[; ;c99\stdio.h: 144: FILE *popen(const char *, const char *);
+[; ;c99\stdio.h: 145: int pclose(FILE *);
+[; ;c99\stdio.h: 146: int fileno(FILE *);
+[; ;c99\stdio.h: 147: int fseeko(FILE *, off_t, int);
+[; ;c99\stdio.h: 148: off_t ftello(FILE *);
+[; ;c99\stdio.h: 149: int dprintf(int, const char *, ...);
+[; ;c99\stdio.h: 150: int vdprintf(int, const char *, __isoc_va_list);
+[; ;c99\stdio.h: 151: void flockfile(FILE *);
+[; ;c99\stdio.h: 152: int ftrylockfile(FILE *);
+[; ;c99\stdio.h: 153: void funlockfile(FILE *);
+[; ;c99\stdio.h: 154: int getc_unlocked(FILE *);
+[; ;c99\stdio.h: 155: int getchar_unlocked(void);
+[; ;c99\stdio.h: 156: int putc_unlocked(int, FILE *);
+[; ;c99\stdio.h: 157: int putchar_unlocked(int);
+[; ;c99\stdio.h: 158: ssize_t getdelim(char **, size_t *, int, FILE *);
+[; ;c99\stdio.h: 159: ssize_t getline(char **, size_t *, FILE *);
+[; ;c99\stdio.h: 160: int renameat(int, const char *, int, const char *);
+[; ;c99\stdio.h: 161: char *ctermid(char *);
+[; ;c99\stdio.h: 169: char *tempnam(const char *, const char *);
+[; ;alltypes.h: 28: typedef long wchar_t;
+[; ;c99\stdlib.h: 23: int atoi (const char *);
+[; ;c99\stdlib.h: 24: long atol (const char *);
+[; ;c99\stdlib.h: 25: long long atoll (const char *);
+[; ;c99\stdlib.h: 26: double atof (const char *);
+[; ;c99\stdlib.h: 28: float strtof (const char *, char **);
+[; ;c99\stdlib.h: 29: double strtod (const char *, char **);
+[; ;c99\stdlib.h: 30: long double strtold (const char *, char **);
+[; ;c99\stdlib.h: 36: long strtol (const char *, char **, int);
+[; ;c99\stdlib.h: 37: unsigned long strtoul (const char *, char **, int);
+[; ;c99\stdlib.h: 38: long long strtoll (const char *, char **, int);
+[; ;c99\stdlib.h: 39: unsigned long long strtoull (const char *, char **, int);
+[; ;c99\stdlib.h: 41: int rand (void);
+[; ;c99\stdlib.h: 42: void srand (unsigned);
+[; ;c99\stdlib.h: 52: void abort (void);
+[; ;c99\stdlib.h: 53: int atexit (void (*) (void));
+[; ;c99\stdlib.h: 54: void exit (int);
+[; ;c99\stdlib.h: 55: void _Exit (int);
+[; ;c99\stdlib.h: 65: void *bsearch (const void *, const void *, size_t, size_t, int (*)(const void *, const void *));
+[; ;c99\stdlib.h: 71: __nonreentrant void qsort (void *, size_t, size_t, int (*)(const void *, const void *));
+[; ;c99\stdlib.h: 73: int abs (int);
+[; ;c99\stdlib.h: 74: long labs (long);
+[; ;c99\stdlib.h: 75: long long llabs (long long);
+[; ;c99\stdlib.h: 77: typedef struct { int quot, rem; } div_t;
+[; ;c99\stdlib.h: 78: typedef struct { long quot, rem; } ldiv_t;
+[; ;c99\stdlib.h: 79: typedef struct { long long quot, rem; } lldiv_t;
+[; ;c99\stdlib.h: 81: div_t div (int, int);
+[; ;c99\stdlib.h: 82: ldiv_t ldiv (long, long);
+[; ;c99\stdlib.h: 83: lldiv_t lldiv (long long, long long);
+[; ;c99\stdlib.h: 86: typedef struct { unsigned int quot, rem; } udiv_t;
+[; ;c99\stdlib.h: 87: typedef struct { unsigned long quot, rem; } uldiv_t;
+[; ;c99\stdlib.h: 88: udiv_t udiv (unsigned int, unsigned int);
+[; ;c99\stdlib.h: 89: uldiv_t uldiv (unsigned long, unsigned long);
+[; ;c99\stdlib.h: 104: size_t __ctype_get_mb_cur_max(void);
+[; ;alltypes.h: 409: typedef struct __locale_struct * locale_t;
+[; ;c99\string.h: 27: void *memcpy (void *, const void *, size_t);
+[; ;c99\string.h: 28: void *memmove (void *, const void *, size_t);
+[; ;c99\string.h: 29: void *memset (void *, int, size_t);
+[; ;c99\string.h: 30: int memcmp (const void *, const void *, size_t);
+[; ;c99\string.h: 31: void *memchr (const void *, int, size_t);
+[; ;c99\string.h: 33: char *strcpy (char *, const char *);
+[; ;c99\string.h: 34: char *strncpy (char *, const char *, size_t);
+[; ;c99\string.h: 36: char *strcat (char *, const char *);
+[; ;c99\string.h: 37: char *strncat (char *, const char *, size_t);
+[; ;c99\string.h: 39: int strcmp (const char *, const char *);
+[; ;c99\string.h: 40: int strncmp (const char *, const char *, size_t);
+[; ;c99\string.h: 42: int strcoll (const char *, const char *);
+[; ;c99\string.h: 43: size_t strxfrm (char *, const char *, size_t);
+[; ;c99\string.h: 45: char *strchr (const char *, int);
+[; ;c99\string.h: 46: char *strrchr (const char *, int);
+[; ;c99\string.h: 48: size_t strcspn (const char *, const char *);
+[; ;c99\string.h: 49: size_t strspn (const char *, const char *);
+[; ;c99\string.h: 50: char *strpbrk (const char *, const char *);
+[; ;c99\string.h: 51: char *strstr (const char *, const char *);
+[; ;c99\string.h: 52: char *strtok (char *, const char *);
+[; ;c99\string.h: 54: size_t strlen (const char *);
+[; ;c99\string.h: 56: char *strerror (int);
+[; ;c99\string.h: 65: char *strtok_r (char *, const char *, char **);
+[; ;c99\string.h: 66: int strerror_r (int, char *, size_t);
+[; ;c99\string.h: 67: char *stpcpy(char *, const char *);
+[; ;c99\string.h: 68: char *stpncpy(char *, const char *, size_t);
+[; ;c99\string.h: 69: size_t strnlen (const char *, size_t);
+[; ;c99\string.h: 70: char *strdup (const char *);
+[; ;c99\string.h: 71: char *strndup (const char *, size_t);
+[; ;c99\string.h: 72: char *strsignal(int);
+[; ;c99\string.h: 73: char *strerror_l (int, locale_t);
+[; ;c99\string.h: 74: int strcoll_l (const char *, const char *, locale_t);
+[; ;c99\string.h: 75: size_t strxfrm_l (char *, const char *, size_t, locale_t);
+[; ;c99\string.h: 80: void *memccpy (void *, const void *, int, size_t);
+[; ;alltypes.h: 135: typedef unsigned long uintptr_t;
+[; ;alltypes.h: 150: typedef long intptr_t;
+[; ;alltypes.h: 166: typedef signed char int8_t;
+[; ;alltypes.h: 171: typedef short int16_t;
+[; ;alltypes.h: 176: typedef long int32_t;
+[; ;alltypes.h: 189: typedef int32_t intmax_t;
+[; ;alltypes.h: 197: typedef unsigned char uint8_t;
+[; ;alltypes.h: 202: typedef unsigned short uint16_t;
+[; ;alltypes.h: 207: typedef unsigned long uint32_t;
+[; ;alltypes.h: 225: typedef uint32_t uintmax_t;
+[; ;c99\stdint.h: 24: typedef int8_t int_fast8_t;
+[; ;c99\stdint.h: 29: typedef int8_t int_least8_t;
+[; ;c99\stdint.h: 30: typedef int16_t int_least16_t;
+[; ;c99\stdint.h: 31: typedef int32_t int_least32_t;
+[; ;c99\stdint.h: 36: typedef uint8_t uint_fast8_t;
+[; ;c99\stdint.h: 41: typedef uint8_t uint_least8_t;
+[; ;c99\stdint.h: 42: typedef uint16_t uint_least16_t;
+[; ;c99\stdint.h: 43: typedef uint32_t uint_least32_t;
+[; ;stdint.h: 1: typedef int32_t int_fast16_t;
+[; ;stdint.h: 2: typedef int32_t int_fast32_t;
+[; ;stdint.h: 3: typedef uint32_t uint_fast16_t;
+[; ;stdint.h: 4: typedef uint32_t uint_fast32_t;
+[; ;alltypes.h: 48: typedef long double float_t;
+[; ;alltypes.h: 53: typedef long double double_t;
+[; ;c99\math.h: 46: int __fpclassifyf(float);
+[; ;c99\math.h: 97: int __signbitf(float);
+[; ;c99\math.h: 149: double acos(double);
+[; ;c99\math.h: 150: float acosf(float);
+[; ;c99\math.h: 151: long double acosl(long double);
+[; ;c99\math.h: 157: double acosh(double);
+[; ;c99\math.h: 158: float acoshf(float);
+[; ;c99\math.h: 159: long double acoshl(long double);
+[; ;c99\math.h: 165: double asin(double);
+[; ;c99\math.h: 166: float asinf(float);
+[; ;c99\math.h: 167: long double asinl(long double);
+[; ;c99\math.h: 173: double asinh(double);
+[; ;c99\math.h: 174: float asinhf(float);
+[; ;c99\math.h: 175: long double asinhl(long double);
+[; ;c99\math.h: 181: double atan(double);
+[; ;c99\math.h: 182: float atanf(float);
+[; ;c99\math.h: 183: long double atanl(long double);
+[; ;c99\math.h: 189: double atan2(double, double);
+[; ;c99\math.h: 190: float atan2f(float, float);
+[; ;c99\math.h: 191: long double atan2l(long double, long double);
+[; ;c99\math.h: 197: double atanh(double);
+[; ;c99\math.h: 198: float atanhf(float);
+[; ;c99\math.h: 199: long double atanhl(long double);
+[; ;c99\math.h: 205: double cbrt(double);
+[; ;c99\math.h: 206: float cbrtf(float);
+[; ;c99\math.h: 207: long double cbrtl(long double);
+[; ;c99\math.h: 213: double ceil(double);
+[; ;c99\math.h: 214: float ceilf(float);
+[; ;c99\math.h: 215: long double ceill(long double);
+[; ;c99\math.h: 221: double copysign(double, double);
+[; ;c99\math.h: 222: float copysignf(float, float);
+[; ;c99\math.h: 223: long double copysignl(long double, long double);
+[; ;c99\math.h: 229: double cos(double);
+[; ;c99\math.h: 230: float cosf(float);
+[; ;c99\math.h: 231: long double cosl(long double);
+[; ;c99\math.h: 237: double cosh(double);
+[; ;c99\math.h: 238: float coshf(float);
+[; ;c99\math.h: 239: long double coshl(long double);
+[; ;c99\math.h: 245: double erf(double);
+[; ;c99\math.h: 246: float erff(float);
+[; ;c99\math.h: 247: long double erfl(long double);
+[; ;c99\math.h: 253: double erfc(double);
+[; ;c99\math.h: 254: float erfcf(float);
+[; ;c99\math.h: 255: long double erfcl(long double);
+[; ;c99\math.h: 261: double exp(double);
+[; ;c99\math.h: 262: float expf(float);
+[; ;c99\math.h: 263: long double expl(long double);
+[; ;c99\math.h: 269: double exp2(double);
+[; ;c99\math.h: 270: float exp2f(float);
+[; ;c99\math.h: 271: long double exp2l(long double);
+[; ;c99\math.h: 277: double expm1(double);
+[; ;c99\math.h: 278: float expm1f(float);
+[; ;c99\math.h: 279: long double expm1l(long double);
+[; ;c99\math.h: 285: double fabs(double);
+[; ;c99\math.h: 286: float fabsf(float);
+[; ;c99\math.h: 287: long double fabsl(long double);
+[; ;c99\math.h: 293: double fdim(double, double);
+[; ;c99\math.h: 294: float fdimf(float, float);
+[; ;c99\math.h: 295: long double fdiml(long double, long double);
+[; ;c99\math.h: 301: double floor(double);
+[; ;c99\math.h: 302: float floorf(float);
+[; ;c99\math.h: 303: long double floorl(long double);
+[; ;c99\math.h: 309: double fma(double, double, double);
+[; ;c99\math.h: 310: float fmaf(float, float, float);
+[; ;c99\math.h: 311: long double fmal(long double, long double, long double);
+[; ;c99\math.h: 317: double fmax(double, double);
+[; ;c99\math.h: 318: float fmaxf(float, float);
+[; ;c99\math.h: 319: long double fmaxl(long double, long double);
+[; ;c99\math.h: 325: double fmin(double, double);
+[; ;c99\math.h: 326: float fminf(float, float);
+[; ;c99\math.h: 327: long double fminl(long double, long double);
+[; ;c99\math.h: 333: double fmod(double, double);
+[; ;c99\math.h: 334: float fmodf(float, float);
+[; ;c99\math.h: 335: long double fmodl(long double, long double);
+[; ;c99\math.h: 341: double frexp(double, int *);
+[; ;c99\math.h: 342: float frexpf(float, int *);
+[; ;c99\math.h: 343: long double frexpl(long double, int *);
+[; ;c99\math.h: 349: double hypot(double, double);
+[; ;c99\math.h: 350: float hypotf(float, float);
+[; ;c99\math.h: 351: long double hypotl(long double, long double);
+[; ;c99\math.h: 357: int ilogb(double);
+[; ;c99\math.h: 358: int ilogbf(float);
+[; ;c99\math.h: 359: int ilogbl(long double);
+[; ;c99\math.h: 365: double ldexp(double, int);
+[; ;c99\math.h: 366: float ldexpf(float, int);
+[; ;c99\math.h: 367: long double ldexpl(long double, int);
+[; ;c99\math.h: 373: double lgamma(double);
+[; ;c99\math.h: 374: float lgammaf(float);
+[; ;c99\math.h: 375: long double lgammal(long double);
+[; ;c99\math.h: 381: long long llrint(double);
+[; ;c99\math.h: 382: long long llrintf(float);
+[; ;c99\math.h: 383: long long llrintl(long double);
+[; ;c99\math.h: 389: long long llround(double);
+[; ;c99\math.h: 390: long long llroundf(float);
+[; ;c99\math.h: 391: long long llroundl(long double);
+[; ;c99\math.h: 397: double log(double);
+[; ;c99\math.h: 398: float logf(float);
+[; ;c99\math.h: 399: long double logl(long double);
+[; ;c99\math.h: 405: double log10(double);
+[; ;c99\math.h: 406: float log10f(float);
+[; ;c99\math.h: 407: long double log10l(long double);
+[; ;c99\math.h: 413: double log1p(double);
+[; ;c99\math.h: 414: float log1pf(float);
+[; ;c99\math.h: 415: long double log1pl(long double);
+[; ;c99\math.h: 421: double log2(double);
+[; ;c99\math.h: 422: float log2f(float);
+[; ;c99\math.h: 423: long double log2l(long double);
+[; ;c99\math.h: 429: double logb(double);
+[; ;c99\math.h: 430: float logbf(float);
+[; ;c99\math.h: 431: long double logbl(long double);
+[; ;c99\math.h: 437: long lrint(double);
+[; ;c99\math.h: 438: long lrintf(float);
+[; ;c99\math.h: 439: long lrintl(long double);
+[; ;c99\math.h: 445: long lround(double);
+[; ;c99\math.h: 446: long lroundf(float);
+[; ;c99\math.h: 447: long lroundl(long double);
+[; ;c99\math.h: 453: double modf(double, double *);
+[; ;c99\math.h: 454: float modff(float, float *);
+[; ;c99\math.h: 455: long double modfl(long double, long double *);
+[; ;c99\math.h: 461: double nan(const char *);
+[; ;c99\math.h: 462: float nanf(const char *);
+[; ;c99\math.h: 463: long double nanl(const char *);
+[; ;c99\math.h: 469: double nearbyint(double);
+[; ;c99\math.h: 470: float nearbyintf(float);
+[; ;c99\math.h: 471: long double nearbyintl(long double);
+[; ;c99\math.h: 477: double nextafter(double, double);
+[; ;c99\math.h: 478: float nextafterf(float, float);
+[; ;c99\math.h: 479: long double nextafterl(long double, long double);
+[; ;c99\math.h: 485: double nexttoward(double, long double);
+[; ;c99\math.h: 486: float nexttowardf(float, long double);
+[; ;c99\math.h: 487: long double nexttowardl(long double, long double);
+[; ;c99\math.h: 498: double pow(double, double);
+[; ;c99\math.h: 499: __nonreentrant float powf(float, float);
+[; ;c99\math.h: 500: long double powl(long double, long double);
+[; ;c99\math.h: 506: double remainder(double, double);
+[; ;c99\math.h: 507: float remainderf(float, float);
+[; ;c99\math.h: 508: long double remainderl(long double, long double);
+[; ;c99\math.h: 514: double remquo(double, double, int *);
+[; ;c99\math.h: 515: float remquof(float, float, int *);
+[; ;c99\math.h: 516: long double remquol(long double, long double, int *);
+[; ;c99\math.h: 522: double rint(double);
+[; ;c99\math.h: 523: float rintf(float);
+[; ;c99\math.h: 524: long double rintl(long double);
+[; ;c99\math.h: 530: double round(double);
+[; ;c99\math.h: 531: float roundf(float);
+[; ;c99\math.h: 532: long double roundl(long double);
+[; ;c99\math.h: 538: double scalbln(double, long);
+[; ;c99\math.h: 539: float scalblnf(float, long);
+[; ;c99\math.h: 540: long double scalblnl(long double, long);
+[; ;c99\math.h: 546: double scalbn(double, int);
+[; ;c99\math.h: 547: float scalbnf(float, int);
+[; ;c99\math.h: 548: long double scalbnl(long double, int);
+[; ;c99\math.h: 554: double sin(double);
+[; ;c99\math.h: 555: float sinf(float);
+[; ;c99\math.h: 556: long double sinl(long double);
+[; ;c99\math.h: 562: double sinh(double);
+[; ;c99\math.h: 563: float sinhf(float);
+[; ;c99\math.h: 564: long double sinhl(long double);
+[; ;c99\math.h: 570: double sqrt(double);
+[; ;c99\math.h: 571: float sqrtf(float);
+[; ;c99\math.h: 572: long double sqrtl(long double);
+[; ;c99\math.h: 578: double tan(double);
+[; ;c99\math.h: 579: float tanf(float);
+[; ;c99\math.h: 580: long double tanl(long double);
+[; ;c99\math.h: 586: double tanh(double);
+[; ;c99\math.h: 587: float tanhf(float);
+[; ;c99\math.h: 588: long double tanhl(long double);
+[; ;c99\math.h: 594: double tgamma(double);
+[; ;c99\math.h: 595: float tgammaf(float);
+[; ;c99\math.h: 596: long double tgammal(long double);
+[; ;c99\math.h: 602: double trunc(double);
+[; ;c99\math.h: 603: float truncf(float);
+[; ;c99\math.h: 604: long double truncl(long double);
+[; ;c99\math.h: 631: extern int signgam;
+[; ;c99\math.h: 633: double j0(double);
+[; ;c99\math.h: 634: double j1(double);
+[; ;c99\math.h: 635: double jn(int, double);
+[; ;c99\math.h: 637: double y0(double);
+[; ;c99\math.h: 638: double y1(double);
+[; ;c99\math.h: 639: double yn(int, double);
+[; ;alltypes.h: 80: typedef long long time_t;
+[; ;alltypes.h: 291: typedef void * timer_t;
+[; ;alltypes.h: 296: typedef int clockid_t;
+[; ;alltypes.h: 301: typedef long clock_t;
+[; ;alltypes.h: 311: struct timespec { time_t tv_sec; long tv_nsec; };
+[; ;alltypes.h: 317: typedef int pid_t;
+[; ;c99\time.h: 40: struct tm {
+[; ;c99\time.h: 41: int tm_sec;
+[; ;c99\time.h: 42: int tm_min;
+[; ;c99\time.h: 43: int tm_hour;
+[; ;c99\time.h: 44: int tm_mday;
+[; ;c99\time.h: 45: int tm_mon;
+[; ;c99\time.h: 46: int tm_year;
+[; ;c99\time.h: 47: int tm_wday;
+[; ;c99\time.h: 48: int tm_yday;
+[; ;c99\time.h: 49: int tm_isdst;
+[; ;c99\time.h: 50: long __tm_gmtoff;
+[; ;c99\time.h: 51: const char *__tm_zone;
+[; ;c99\time.h: 52: };
+[; ;c99\time.h: 54: clock_t clock (void);
+[; ;c99\time.h: 55: time_t time (time_t *);
+[; ;c99\time.h: 56: double difftime (time_t, time_t);
+[; ;c99\time.h: 57: time_t mktime (struct tm *);
+[; ;c99\time.h: 58: size_t strftime (char *, size_t, const char *, const struct tm *);
+[; ;c99\time.h: 59: struct tm *gmtime (const time_t *);
+[; ;c99\time.h: 60: struct tm *localtime (const time_t *);
+[; ;c99\time.h: 61: char *asctime (const struct tm *);
+[; ;c99\time.h: 62: char *ctime (const time_t *);
+[; ;c99\time.h: 63: int timespec_get(struct timespec *, int);
+[; ;c99\time.h: 73: size_t strftime_l (char * , size_t, const char * , const struct tm * , locale_t);
+[; ;c99\time.h: 75: struct tm *gmtime_r (const time_t *, struct tm *);
+[; ;c99\time.h: 76: struct tm *localtime_r (const time_t *, struct tm *);
+[; ;c99\time.h: 77: char *asctime_r (const struct tm *, char *);
+[; ;c99\time.h: 78: char *ctime_r (const time_t *, char *);
+[; ;c99\time.h: 80: void tzset (void);
+[; ;c99\time.h: 82: struct itimerspec {
+[; ;c99\time.h: 83: struct timespec it_interval;
+[; ;c99\time.h: 84: struct timespec it_value;
+[; ;c99\time.h: 85: };
+[; ;c99\time.h: 102: int nanosleep (const struct timespec *, struct timespec *);
+[; ;c99\time.h: 103: int clock_getres (clockid_t, struct timespec *);
+[; ;c99\time.h: 104: int clock_gettime (clockid_t, struct timespec *);
+[; ;c99\time.h: 105: int clock_settime (clockid_t, const struct timespec *);
+[; ;c99\time.h: 106: int clock_nanosleep (clockid_t, int, const struct timespec *, struct timespec *);
+[; ;c99\time.h: 107: int clock_getcpuclockid (pid_t, clockid_t *);
+[; ;c99\time.h: 109: struct sigevent;
+[; ;c99\time.h: 110: int timer_create (clockid_t, struct sigevent *, timer_t *);
+[; ;c99\time.h: 111: int timer_delete (timer_t);
+[; ;c99\time.h: 112: int timer_settime (timer_t, int, const struct itimerspec *, struct itimerspec *);
+[; ;c99\time.h: 113: int timer_gettime (timer_t, struct itimerspec *);
+[; ;c99\time.h: 114: int timer_getoverrun (timer_t);
+[; ;c99\time.h: 116: extern char *tzname[2];
+[; ;c99\time.h: 122: char *strptime (const char *, const char *, struct tm *);
+[; ;c99\time.h: 123: extern int daylight;
+[; ;c99\time.h: 124: extern long timezone;
+[; ;c99\time.h: 125: extern int getdate_err;
+[; ;c99\time.h: 126: struct tm *getdate (const char *);
+"9 newmain.c
+[v _sourcef `Cuc ~T0 @X0 -> 0 `x e ]
+[i _sourcef
+:U ..
+-> -> 80 `i `uc
+-> -> 54 `i `uc
+-> -> 10 `i `uc
+-> -> 50 `i `uc
+-> -> 49 `i `uc
+-> -> 32 `i `uc
+-> -> 50 `i `uc
+-> -> 48 `i `uc
+-> -> 10 `i `uc
+-> -> 50 `i `uc
+-> -> 53 `i `uc
+-> -> 53 `i `uc
+"10
+-> -> 10 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+"11
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+"12
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+"13
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+"14
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+"15
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 248 `i `uc
+-> -> 160 `i `uc
+-> -> 104 `i `uc
+-> -> 248 `i `uc
+-> -> 160 `i `uc
+-> -> 104 `i `uc
+-> -> 248 `i `uc
+-> -> 160 `i `uc
+"16
+-> -> 104 `i `uc
+-> -> 248 `i `uc
+-> -> 160 `i `uc
+-> -> 104 `i `uc
+-> -> 248 `i `uc
+-> -> 160 `i `uc
+-> -> 104 `i `uc
+-> -> 248 `i `uc
+-> -> 160 `i `uc
+-> -> 104 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+"17
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+"18
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 248 `i `uc
+-> -> 248 `i `uc
+-> -> 248 `i `uc
+-> -> 248 `i `uc
+-> -> 160 `i `uc
+-> -> 104 `i `uc
+-> -> 248 `i `uc
+-> -> 248 `i `uc
+-> -> 248 `i `uc
+-> -> 248 `i `uc
+-> -> 160 `i `uc
+-> -> 104 `i `uc
+-> -> 248 `i `uc
+"19
+-> -> 160 `i `uc
+-> -> 104 `i `uc
+-> -> 248 `i `uc
+-> -> 248 `i `uc
+-> -> 248 `i `uc
+-> -> 248 `i `uc
+-> -> 160 `i `uc
+-> -> 104 `i `uc
+-> -> 248 `i `uc
+-> -> 248 `i `uc
+-> -> 248 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+"20
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+"21
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 248 `i `uc
+-> -> 160 `i `uc
+-> -> 104 `i `uc
+-> -> 248 `i `uc
+-> -> 160 `i `uc
+-> -> 104 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 248 `i `uc
+-> -> 160 `i `uc
+-> -> 104 `i `uc
+-> -> 248 `i `uc
+-> -> 160 `i `uc
+-> -> 104 `i `uc
+-> -> 0 `i `uc
+"22
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 248 `i `uc
+-> -> 160 `i `uc
+-> -> 104 `i `uc
+-> -> 248 `i `uc
+-> -> 160 `i `uc
+-> -> 104 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+"23
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 248 `i `uc
+-> -> 160 `i `uc
+"24
+-> -> 104 `i `uc
+-> -> 248 `i `uc
+-> -> 160 `i `uc
+-> -> 104 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 248 `i `uc
+-> -> 160 `i `uc
+-> -> 104 `i `uc
+-> -> 248 `i `uc
+-> -> 160 `i `uc
+-> -> 104 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 248 `i `uc
+-> -> 160 `i `uc
+-> -> 104 `i `uc
+"25
+-> -> 248 `i `uc
+-> -> 160 `i `uc
+-> -> 104 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+"26
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 248 `i `uc
+-> -> 64 `i `uc
+-> -> 40 `i `uc
+-> -> 248 `i `uc
+-> -> 248 `i `uc
+-> -> 248 `i `uc
+-> -> 248 `i `uc
+"27
+-> -> 160 `i `uc
+-> -> 104 `i `uc
+-> -> 248 `i `uc
+-> -> 160 `i `uc
+-> -> 104 `i `uc
+-> -> 248 `i `uc
+-> -> 160 `i `uc
+-> -> 104 `i `uc
+-> -> 248 `i `uc
+-> -> 160 `i `uc
+-> -> 104 `i `uc
+-> -> 248 `i `uc
+-> -> 248 `i `uc
+-> -> 248 `i `uc
+-> -> 248 `i `uc
+-> -> 64 `i `uc
+-> -> 40 `i `uc
+"28
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+"29
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 248 `i `uc
+-> -> 64 `i `uc
+-> -> 40 `i `uc
+-> -> 248 `i `uc
+-> -> 248 `i `uc
+-> -> 248 `i `uc
+-> -> 248 `i `uc
+-> -> 248 `i `uc
+-> -> 248 `i `uc
+-> -> 248 `i `uc
+-> -> 248 `i `uc
+"30
+-> -> 248 `i `uc
+-> -> 248 `i `uc
+-> -> 248 `i `uc
+-> -> 248 `i `uc
+-> -> 248 `i `uc
+-> -> 248 `i `uc
+-> -> 248 `i `uc
+-> -> 248 `i `uc
+-> -> 248 `i `uc
+-> -> 248 `i `uc
+-> -> 248 `i `uc
+-> -> 248 `i `uc
+-> -> 248 `i `uc
+-> -> 248 `i `uc
+-> -> 248 `i `uc
+-> -> 248 `i `uc
+"31
+-> -> 248 `i `uc
+-> -> 64 `i `uc
+-> -> 40 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+"32
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 248 `i `uc
+-> -> 64 `i `uc
+-> -> 40 `i `uc
+-> -> 248 `i `uc
+-> -> 64 `i `uc
+-> -> 40 `i `uc
+-> -> 248 `i `uc
+-> -> 248 `i `uc
+-> -> 248 `i `uc
+-> -> 248 `i `uc
+-> -> 248 `i `uc
+-> -> 248 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+"33
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 248 `i `uc
+-> -> 248 `i `uc
+-> -> 248 `i `uc
+-> -> 248 `i `uc
+-> -> 248 `i `uc
+-> -> 248 `i `uc
+-> -> 248 `i `uc
+-> -> 64 `i `uc
+-> -> 40 `i `uc
+-> -> 248 `i `uc
+-> -> 64 `i `uc
+"34
+-> -> 40 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 248 `i `uc
+"35
+-> -> 64 `i `uc
+-> -> 40 `i `uc
+-> -> 248 `i `uc
+-> -> 64 `i `uc
+-> -> 40 `i `uc
+-> -> 248 `i `uc
+-> -> 248 `i `uc
+-> -> 248 `i `uc
+-> -> 248 `i `uc
+-> -> 248 `i `uc
+-> -> 248 `i `uc
+-> -> 248 `i `uc
+-> -> 64 `i `uc
+-> -> 40 `i `uc
+-> -> 248 `i `uc
+-> -> 248 `i `uc
+-> -> 248 `i `uc
+"36
+-> -> 248 `i `uc
+-> -> 248 `i `uc
+-> -> 248 `i `uc
+-> -> 248 `i `uc
+-> -> 248 `i `uc
+-> -> 248 `i `uc
+-> -> 248 `i `uc
+-> -> 248 `i `uc
+-> -> 248 `i `uc
+-> -> 248 `i `uc
+-> -> 64 `i `uc
+-> -> 40 `i `uc
+-> -> 248 `i `uc
+-> -> 248 `i `uc
+-> -> 248 `i `uc
+-> -> 248 `i `uc
+-> -> 248 `i `uc
+"37
+-> -> 248 `i `uc
+-> -> 248 `i `uc
+-> -> 64 `i `uc
+-> -> 40 `i `uc
+-> -> 248 `i `uc
+-> -> 64 `i `uc
+-> -> 40 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+"38
+-> -> 0 `i `uc
+-> -> 248 `i `uc
+-> -> 160 `i `uc
+-> -> 104 `i `uc
+-> -> 248 `i `uc
+-> -> 64 `i `uc
+-> -> 40 `i `uc
+-> -> 248 `i `uc
+-> -> 64 `i `uc
+-> -> 40 `i `uc
+-> -> 248 `i `uc
+-> -> 248 `i `uc
+-> -> 248 `i `uc
+-> -> 248 `i `uc
+-> -> 64 `i `uc
+-> -> 40 `i `uc
+-> -> 248 `i `uc
+-> -> 64 `i `uc
+"39
+-> -> 40 `i `uc
+-> -> 248 `i `uc
+-> -> 248 `i `uc
+-> -> 248 `i `uc
+-> -> 248 `i `uc
+-> -> 248 `i `uc
+-> -> 248 `i `uc
+-> -> 248 `i `uc
+-> -> 248 `i `uc
+-> -> 248 `i `uc
+-> -> 248 `i `uc
+-> -> 248 `i `uc
+-> -> 248 `i `uc
+-> -> 248 `i `uc
+-> -> 64 `i `uc
+-> -> 40 `i `uc
+-> -> 248 `i `uc
+"40
+-> -> 64 `i `uc
+-> -> 40 `i `uc
+-> -> 248 `i `uc
+-> -> 248 `i `uc
+-> -> 248 `i `uc
+-> -> 248 `i `uc
+-> -> 64 `i `uc
+-> -> 40 `i `uc
+-> -> 248 `i `uc
+-> -> 64 `i `uc
+-> -> 40 `i `uc
+-> -> 248 `i `uc
+-> -> 160 `i `uc
+-> -> 104 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+"41
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 248 `i `uc
+-> -> 160 `i `uc
+-> -> 104 `i `uc
+-> -> 248 `i `uc
+-> -> 64 `i `uc
+-> -> 40 `i `uc
+-> -> 248 `i `uc
+-> -> 64 `i `uc
+-> -> 40 `i `uc
+-> -> 248 `i `uc
+-> -> 64 `i `uc
+-> -> 40 `i `uc
+"42
+-> -> 248 `i `uc
+-> -> 64 `i `uc
+-> -> 40 `i `uc
+-> -> 248 `i `uc
+-> -> 64 `i `uc
+-> -> 40 `i `uc
+-> -> 248 `i `uc
+-> -> 248 `i `uc
+-> -> 248 `i `uc
+-> -> 248 `i `uc
+-> -> 248 `i `uc
+-> -> 248 `i `uc
+-> -> 248 `i `uc
+-> -> 248 `i `uc
+-> -> 248 `i `uc
+-> -> 248 `i `uc
+-> -> 248 `i `uc
+"43
+-> -> 248 `i `uc
+-> -> 248 `i `uc
+-> -> 64 `i `uc
+-> -> 40 `i `uc
+-> -> 248 `i `uc
+-> -> 64 `i `uc
+-> -> 40 `i `uc
+-> -> 248 `i `uc
+-> -> 64 `i `uc
+-> -> 40 `i `uc
+-> -> 248 `i `uc
+-> -> 64 `i `uc
+-> -> 40 `i `uc
+-> -> 248 `i `uc
+-> -> 64 `i `uc
+-> -> 40 `i `uc
+-> -> 248 `i `uc
+-> -> 160 `i `uc
+"44
+-> -> 104 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 248 `i `uc
+-> -> 160 `i `uc
+-> -> 104 `i `uc
+-> -> 248 `i `uc
+-> -> 64 `i `uc
+-> -> 40 `i `uc
+-> -> 248 `i `uc
+"45
+-> -> 64 `i `uc
+-> -> 40 `i `uc
+-> -> 248 `i `uc
+-> -> 64 `i `uc
+-> -> 40 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 248 `i `uc
+-> -> 64 `i `uc
+-> -> 40 `i `uc
+-> -> 248 `i `uc
+-> -> 64 `i `uc
+-> -> 40 `i `uc
+-> -> 248 `i `uc
+-> -> 248 `i `uc
+-> -> 248 `i `uc
+-> -> 248 `i `uc
+-> -> 248 `i `uc
+"46
+-> -> 248 `i `uc
+-> -> 248 `i `uc
+-> -> 64 `i `uc
+-> -> 40 `i `uc
+-> -> 248 `i `uc
+-> -> 64 `i `uc
+-> -> 40 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 248 `i `uc
+-> -> 64 `i `uc
+-> -> 40 `i `uc
+-> -> 248 `i `uc
+-> -> 64 `i `uc
+-> -> 40 `i `uc
+-> -> 248 `i `uc
+-> -> 64 `i `uc
+-> -> 40 `i `uc
+-> -> 248 `i `uc
+"47
+-> -> 160 `i `uc
+-> -> 104 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 248 `i `uc
+-> -> 64 `i `uc
+-> -> 40 `i `uc
+-> -> 248 `i `uc
+"48
+-> -> 64 `i `uc
+-> -> 40 `i `uc
+-> -> 248 `i `uc
+-> -> 64 `i `uc
+-> -> 40 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 248 `i `uc
+-> -> 64 `i `uc
+-> -> 40 `i `uc
+-> -> 248 `i `uc
+-> -> 64 `i `uc
+-> -> 40 `i `uc
+-> -> 248 `i `uc
+-> -> 64 `i `uc
+-> -> 40 `i `uc
+-> -> 248 `i `uc
+-> -> 64 `i `uc
+-> -> 40 `i `uc
+"49
+-> -> 248 `i `uc
+-> -> 64 `i `uc
+-> -> 40 `i `uc
+-> -> 248 `i `uc
+-> -> 64 `i `uc
+-> -> 40 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 248 `i `uc
+-> -> 64 `i `uc
+-> -> 40 `i `uc
+-> -> 248 `i `uc
+-> -> 64 `i `uc
+-> -> 40 `i `uc
+-> -> 248 `i `uc
+-> -> 64 `i `uc
+-> -> 40 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+"50
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 248 `i `uc
+-> -> 64 `i `uc
+-> -> 40 `i `uc
+-> -> 248 `i `uc
+-> -> 64 `i `uc
+-> -> 40 `i `uc
+"51
+-> -> 248 `i `uc
+-> -> 64 `i `uc
+-> -> 40 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 248 `i `uc
+-> -> 64 `i `uc
+-> -> 40 `i `uc
+-> -> 248 `i `uc
+-> -> 64 `i `uc
+-> -> 40 `i `uc
+-> -> 248 `i `uc
+-> -> 64 `i `uc
+-> -> 40 `i `uc
+-> -> 248 `i `uc
+-> -> 64 `i `uc
+-> -> 40 `i `uc
+-> -> 248 `i `uc
+-> -> 64 `i `uc
+"52
+-> -> 40 `i `uc
+-> -> 248 `i `uc
+-> -> 64 `i `uc
+-> -> 40 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 248 `i `uc
+-> -> 64 `i `uc
+-> -> 40 `i `uc
+-> -> 248 `i `uc
+-> -> 64 `i `uc
+-> -> 40 `i `uc
+-> -> 248 `i `uc
+-> -> 64 `i `uc
+-> -> 40 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+"53
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 248 `i `uc
+-> -> 64 `i `uc
+-> -> 40 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 248 `i `uc
+"54
+-> -> 64 `i `uc
+-> -> 40 `i `uc
+-> -> 248 `i `uc
+-> -> 64 `i `uc
+-> -> 40 `i `uc
+-> -> 248 `i `uc
+-> -> 64 `i `uc
+-> -> 40 `i `uc
+-> -> 248 `i `uc
+-> -> 64 `i `uc
+-> -> 40 `i `uc
+-> -> 248 `i `uc
+-> -> 64 `i `uc
+-> -> 40 `i `uc
+-> -> 248 `i `uc
+-> -> 64 `i `uc
+-> -> 40 `i `uc
+-> -> 248 `i `uc
+-> -> 64 `i `uc
+"55
+-> -> 40 `i `uc
+-> -> 248 `i `uc
+-> -> 64 `i `uc
+-> -> 40 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 248 `i `uc
+-> -> 64 `i `uc
+-> -> 40 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+"56
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 248 `i `uc
+-> -> 64 `i `uc
+-> -> 40 `i `uc
+-> -> 248 `i `uc
+-> -> 64 `i `uc
+-> -> 40 `i `uc
+"57
+-> -> 248 `i `uc
+-> -> 64 `i `uc
+-> -> 40 `i `uc
+-> -> 248 `i `uc
+-> -> 64 `i `uc
+-> -> 40 `i `uc
+-> -> 248 `i `uc
+-> -> 64 `i `uc
+-> -> 40 `i `uc
+-> -> 248 `i `uc
+-> -> 64 `i `uc
+-> -> 40 `i `uc
+-> -> 248 `i `uc
+-> -> 64 `i `uc
+-> -> 40 `i `uc
+-> -> 248 `i `uc
+-> -> 64 `i `uc
+-> -> 40 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+"58
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+"59
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 248 `i `uc
+-> -> 64 `i `uc
+-> -> 40 `i `uc
+-> -> 248 `i `uc
+-> -> 64 `i `uc
+-> -> 40 `i `uc
+-> -> 248 `i `uc
+-> -> 160 `i `uc
+-> -> 104 `i `uc
+-> -> 248 `i `uc
+-> -> 160 `i `uc
+-> -> 104 `i `uc
+-> -> 248 `i `uc
+-> -> 64 `i `uc
+-> -> 40 `i `uc
+"60
+-> -> 248 `i `uc
+-> -> 64 `i `uc
+-> -> 40 `i `uc
+-> -> 248 `i `uc
+-> -> 160 `i `uc
+-> -> 104 `i `uc
+-> -> 248 `i `uc
+-> -> 160 `i `uc
+-> -> 104 `i `uc
+-> -> 248 `i `uc
+-> -> 64 `i `uc
+-> -> 40 `i `uc
+-> -> 248 `i `uc
+-> -> 64 `i `uc
+-> -> 40 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+"61
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+"62
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+"63
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+"64
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+"65
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+"66
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -U -> 1 `i `uc
+..
+]
+[; ;newmain.c: 9: const unsigned char sourcef[] = {80, 54, 10, 50, 49, 32, 50, 48, 10, 50, 53, 53,
+[; ;newmain.c: 10: 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+[; ;newmain.c: 11: 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+[; ;newmain.c: 12: 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+[; ;newmain.c: 13: 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+[; ;newmain.c: 14: 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+[; ;newmain.c: 15: 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 248, 160, 104, 248, 160, 104, 248, 160,
+[; ;newmain.c: 16: 104, 248, 160, 104, 248, 160, 104, 248, 160, 104, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+[; ;newmain.c: 17: 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+[; ;newmain.c: 18: 0, 0, 0, 0, 0, 248, 248, 248, 248, 160, 104, 248, 248, 248, 248, 160, 104, 248,
+[; ;newmain.c: 19: 160, 104, 248, 248, 248, 248, 160, 104, 248, 248, 248, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+[; ;newmain.c: 20: 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+[; ;newmain.c: 21: 0, 0, 0, 248, 160, 104, 248, 160, 104, 0, 0, 0, 248, 160, 104, 248, 160, 104, 0,
+[; ;newmain.c: 22: 0, 0, 248, 160, 104, 248, 160, 104, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+[; ;newmain.c: 23: 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 248, 160,
+[; ;newmain.c: 24: 104, 248, 160, 104, 0, 0, 0, 248, 160, 104, 248, 160, 104, 0, 0, 0, 248, 160, 104,
+[; ;newmain.c: 25: 248, 160, 104, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+[; ;newmain.c: 26: 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 248, 64, 40, 248, 248, 248, 248,
+[; ;newmain.c: 27: 160, 104, 248, 160, 104, 248, 160, 104, 248, 160, 104, 248, 248, 248, 248, 64, 40,
+[; ;newmain.c: 28: 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+[; ;newmain.c: 29: 0, 0, 0, 0, 0, 0, 0, 0, 0, 248, 64, 40, 248, 248, 248, 248, 248, 248, 248, 248,
+[; ;newmain.c: 30: 248, 248, 248, 248, 248, 248, 248, 248, 248, 248, 248, 248, 248, 248, 248, 248,
+[; ;newmain.c: 31: 248, 64, 40, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+[; ;newmain.c: 32: 0, 0, 0, 0, 0, 0, 0, 248, 64, 40, 248, 64, 40, 248, 248, 248, 248, 248, 248, 0, 0,
+[; ;newmain.c: 33: 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 248, 248, 248, 248, 248, 248, 248, 64, 40, 248, 64,
+[; ;newmain.c: 34: 40, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 248,
+[; ;newmain.c: 35: 64, 40, 248, 64, 40, 248, 248, 248, 248, 248, 248, 248, 64, 40, 248, 248, 248,
+[; ;newmain.c: 36: 248, 248, 248, 248, 248, 248, 248, 248, 248, 248, 64, 40, 248, 248, 248, 248, 248,
+[; ;newmain.c: 37: 248, 248, 64, 40, 248, 64, 40, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+[; ;newmain.c: 38: 0, 248, 160, 104, 248, 64, 40, 248, 64, 40, 248, 248, 248, 248, 64, 40, 248, 64,
+[; ;newmain.c: 39: 40, 248, 248, 248, 248, 248, 248, 248, 248, 248, 248, 248, 248, 248, 64, 40, 248,
+[; ;newmain.c: 40: 64, 40, 248, 248, 248, 248, 64, 40, 248, 64, 40, 248, 160, 104, 0, 0, 0, 0, 0, 0,
+[; ;newmain.c: 41: 0, 0, 0, 0, 0, 0, 0, 0, 0, 248, 160, 104, 248, 64, 40, 248, 64, 40, 248, 64, 40,
+[; ;newmain.c: 42: 248, 64, 40, 248, 64, 40, 248, 248, 248, 248, 248, 248, 248, 248, 248, 248, 248,
+[; ;newmain.c: 43: 248, 248, 64, 40, 248, 64, 40, 248, 64, 40, 248, 64, 40, 248, 64, 40, 248, 160,
+[; ;newmain.c: 44: 104, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 248, 160, 104, 248, 64, 40, 248,
+[; ;newmain.c: 45: 64, 40, 248, 64, 40, 0, 0, 0, 248, 64, 40, 248, 64, 40, 248, 248, 248, 248, 248,
+[; ;newmain.c: 46: 248, 248, 64, 40, 248, 64, 40, 0, 0, 0, 248, 64, 40, 248, 64, 40, 248, 64, 40, 248,
+[; ;newmain.c: 47: 160, 104, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 248, 64, 40, 248,
+[; ;newmain.c: 48: 64, 40, 248, 64, 40, 0, 0, 0, 248, 64, 40, 248, 64, 40, 248, 64, 40, 248, 64, 40,
+[; ;newmain.c: 49: 248, 64, 40, 248, 64, 40, 0, 0, 0, 248, 64, 40, 248, 64, 40, 248, 64, 40, 0, 0, 0,
+[; ;newmain.c: 50: 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 248, 64, 40, 248, 64, 40,
+[; ;newmain.c: 51: 248, 64, 40, 0, 0, 0, 248, 64, 40, 248, 64, 40, 248, 64, 40, 248, 64, 40, 248, 64,
+[; ;newmain.c: 52: 40, 248, 64, 40, 0, 0, 0, 248, 64, 40, 248, 64, 40, 248, 64, 40, 0, 0, 0, 0, 0, 0,
+[; ;newmain.c: 53: 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 248, 64, 40, 0, 0, 0, 248,
+[; ;newmain.c: 54: 64, 40, 248, 64, 40, 248, 64, 40, 248, 64, 40, 248, 64, 40, 248, 64, 40, 248, 64,
+[; ;newmain.c: 55: 40, 248, 64, 40, 0, 0, 0, 248, 64, 40, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+[; ;newmain.c: 56: 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 248, 64, 40, 248, 64, 40,
+[; ;newmain.c: 57: 248, 64, 40, 248, 64, 40, 248, 64, 40, 248, 64, 40, 248, 64, 40, 248, 64, 40, 0, 0,
+[; ;newmain.c: 58: 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+[; ;newmain.c: 59: 0, 0, 0, 0, 0, 0, 248, 64, 40, 248, 64, 40, 248, 160, 104, 248, 160, 104, 248, 64, 40,
+[; ;newmain.c: 60: 248, 64, 40, 248, 160, 104, 248, 160, 104, 248, 64, 40, 248, 64, 40, 0, 0, 0, 0,
+[; ;newmain.c: 61: 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+[; ;newmain.c: 62: 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+[; ;newmain.c: 63: 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+[; ;newmain.c: 64: 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+[; ;newmain.c: 65: 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+[; ;newmain.c: 66: 0, 0, 0, 0, 0, -1};
+[; ;newmain.c: 69: typedef unsigned char uint8_t;
+[; ;newmain.c: 70: typedef signed char int8_t;
+[; ;newmain.c: 71: typedef unsigned short uint16_t;
+[; ;newmain.c: 72: typedef signed short int16_t;
+[; ;newmain.c: 90: typedef struct {
+[; ;newmain.c: 92: unsigned char red,green,blue;
+[; ;newmain.c: 93: } PPMPixel;
+[; ;newmain.c: 96: typedef struct {
+[; ;newmain.c: 97: int x, y;
+[; ;newmain.c: 98: PPMPixel *data;
+[; ;newmain.c: 99: } PPMImage;
+"102
+[v _readPPM `(v ~T0 @X0 1 sf2`*S14`*Cuc ]
+{
+[; ;newmain.c: 102: static void readPPM(PPMImage *img, const char *filename) {
+[e :U _readPPM ]
+[v _img `*S14 ~T0 @X0 1 r1 ]
+[v _filename `*Cuc ~T0 @X0 1 r2 ]
+[f ]
+"104
+[v _buff `uc ~T0 @X0 -> 16 `i a ]
+"106
+[v _c `i ~T0 @X0 1 a ]
+[v _rgb_comp_color `i ~T0 @X0 1 a ]
+"107
+[v _chread `i ~T0 @X0 1 a ]
+[; ;newmain.c: 104: char buff[16];
+[; ;newmain.c: 106: int c, rgb_comp_color;
+[; ;newmain.c: 107: int chread = 0;
+[e = _chread -> 0 `i ]
+[; ;newmain.c: 117: memcpy(buff, sourcef, sizeof(buff));
+"117
+[e ( _memcpy (3 , , -> &U _buff `*v -> &U _sourcef `*Cv -> # _buff `ui ]
+[; ;newmain.c: 119: chread = 2;
+"119
+[e = _chread -> 2 `i ]
+[; ;newmain.c: 122: if(buff[0] != 'P' || buff[1] != '6') {
+"122
+[e $ ! || != -> *U + &U _buff * -> -> -> 0 `i `ui `ux -> -> # *U &U _buff `ui `ux `ui -> 80 `ui != -> *U + &U _buff * -> -> -> 1 `i `ui `ux -> -> # *U &U _buff `ui `ux `ui -> 54 `ui 16  ]
+{
+[; ;newmain.c: 124: fprintf((stderr), "Invalid image format (must be 'P6')\n");
+"124
+[e ( _fprintf (1 , -> _stderr `*S1 :s 1C ]
+[; ;newmain.c: 125: exit(1);
+"125
+[e ( _exit (1 -> 1 `i ]
+"126
+}
+[e :U 16 ]
+[; ;newmain.c: 126: }
+[; ;newmain.c: 138: while(sourcef[chread] == '\n') chread++;
+"138
+[e $U 17  ]
+[e :U 18 ]
+[e ++ _chread -> 1 `i ]
+[e :U 17 ]
+[e $ == -> *U + &U _sourcef * -> -> _chread `ui `ux -> -> # *U &U _sourcef `ui `ux `ui -> 10 `ui 18  ]
+[e :U 19 ]
+[; ;newmain.c: 141: sscanf(sourcef + chread, "%d %d", &img->x, &img->y);
+"141
+[e ( _sscanf (1 , , (. , + &U _sourcef * -> _chread `x -> -> # *U &U _sourcef `i `x :s 2C &U . *U _img 0 &U . *U _img 1 ]
+[; ;newmain.c: 143: chread += 6;
+"143
+[e =+ _chread -> 6 `i ]
+[; ;newmain.c: 155: printf("chread 2: %s\n", sourcef+chread);
+"155
+[e ( _printf , (. :s 3C + &U _sourcef * -> _chread `x -> -> # *U &U _sourcef `i `x ]
+[; ;newmain.c: 158: sscanf((sourcef + chread), "%d", &rgb_comp_color);
+"158
+[e ( _sscanf (1 , (. , + &U _sourcef * -> _chread `x -> -> # *U &U _sourcef `i `x :s 4C &U _rgb_comp_color ]
+[; ;newmain.c: 160: chread += 3;
+"160
+[e =+ _chread -> 3 `i ]
+[; ;newmain.c: 162: while(sourcef[chread] == '\n') chread++;
+"162
+[e $U 20  ]
+[e :U 21 ]
+[e ++ _chread -> 1 `i ]
+[e :U 20 ]
+[e $ == -> *U + &U _sourcef * -> -> _chread `ui `ux -> -> # *U &U _sourcef `ui `ux `ui -> 10 `ui 21  ]
+[e :U 22 ]
+[; ;newmain.c: 164: printf("rgb_comp_color: %d\n", rgb_comp_color);
+"164
+[e ( _printf , (. :s 5C _rgb_comp_color ]
+[; ;newmain.c: 166: printf("chread 3: %d", chread);
+"166
+[e ( _printf , (. :s 6C _chread ]
+[; ;newmain.c: 169: if(rgb_comp_color!= 255) {
+"169
+[e $ ! != _rgb_comp_color -> 255 `i 23  ]
+{
+[; ;newmain.c: 170: fprintf((stderr), "'%s' does not have 8-bits components\n", filename);
+"170
+[e ( _fprintf (1 , (. , -> _stderr `*S1 :s 7C _filename ]
+[; ;newmain.c: 171: exit(1);
+"171
+[e ( _exit (1 -> 1 `i ]
+"172
+}
+[e :U 23 ]
+[; ;newmain.c: 172: }
+[; ;newmain.c: 177: img->data = (sourcef + chread);
+"177
+[e = . *U _img 2 -> + &U _sourcef * -> _chread `x -> -> # *U &U _sourcef `i `x `*S13 ]
+[; ;newmain.c: 188: }
+"188
+[e :UE 15 ]
+}
+"190
+[v _writeSerial `(v ~T0 @X0 1 ef1`*uc ]
+{
+[; ;newmain.c: 190: void writeSerial(uint8_t sample[3]){
+[e :U _writeSerial ]
+[v _sample `*uc ~T0 @X0 1 r1 ]
+[f ]
+[; ;newmain.c: 192: }
+"192
+[e :UE 24 ]
+}
+"194
+[v _writePPM `(v ~T0 @X0 1 ef2`*Cuc`*S14 ]
+"195
+{
+[; ;newmain.c: 194: void writePPM(const char *filename, PPMImage *img)
+[; ;newmain.c: 195: {
+[e :U _writePPM ]
+"194
+[v _filename `*Cuc ~T0 @X0 1 r1 ]
+[v _img `*S14 ~T0 @X0 1 r2 ]
+"195
+[f ]
+"196
+[v _fp `*S1 ~T0 @X0 1 a ]
+[; ;newmain.c: 196: FILE *fp;
+[; ;newmain.c: 198: fp = fopen(filename, "wb");
+"198
+[e = _fp ( _fopen (2 , _filename :s 8C ]
+[; ;newmain.c: 199: if (!fp) {
+"199
+[e $ ! ! != _fp -> -> 0 `i `*S1 26  ]
+{
+[; ;newmain.c: 200: fprintf((stderr), "Unable to open file '%s'\n", filename);
+"200
+[e ( _fprintf (1 , (. , -> _stderr `*S1 :s 9C _filename ]
+[; ;newmain.c: 201: exit(1);
+"201
+[e ( _exit (1 -> 1 `i ]
+"202
+}
+[e :U 26 ]
+[; ;newmain.c: 202: }
+[; ;newmain.c: 205: fprintf(fp, "P6\n");
+"205
+[e ( _fprintf (1 , _fp :s 10C ]
+[; ;newmain.c: 208: fprintf(fp, "# Created by %s\n","FELIXKLEMM");
+"208
+[e ( _fprintf (1 , (. , _fp :s 11C :s 12C ]
+[; ;newmain.c: 211: fprintf(fp, "%d %d\n",img->x,img->y);
+"211
+[e ( _fprintf (1 , , (. , _fp :s 13C . *U _img 0 . *U _img 1 ]
+[; ;newmain.c: 214: fprintf(fp, "%d\n",255);
+"214
+[e ( _fprintf (1 , (. , _fp :s 14C -> 255 `i ]
+[; ;newmain.c: 217: fwrite(img->data, 3 * img->x, img->y, fp);
+"217
+[e ( _fwrite (4 , , , -> . *U _img 2 `*Cv -> * -> 3 `i . *U _img 0 `ui -> . *U _img 1 `ui _fp ]
+[; ;newmain.c: 218: fclose(fp);
+"218
+[e ( _fclose (1 _fp ]
+[; ;newmain.c: 219: }
+"219
+[e :UE 25 ]
+}
+"222
+[v _cubic_hermite `(f ~T0 @X0 1 ef5`f`f`f`f`f ]
+{
+[; ;newmain.c: 222: float cubic_hermite(float A, float B, float C, float D, float t) {
+[e :U _cubic_hermite ]
+[v _A `f ~T0 @X0 1 r1 ]
+[v _B `f ~T0 @X0 1 r2 ]
+[v _C `f ~T0 @X0 1 r3 ]
+[v _D `f ~T0 @X0 1 r4 ]
+[v _t `f ~T0 @X0 1 r5 ]
+[f ]
+"225
+[v _a `f ~T0 @X0 1 a ]
+[; ;newmain.c: 225: float a = -A / 2.0f + (3.0f*B) / 2.0f - (3.0f*C) / 2.0f + D / 2.0f;
+[e = _a + - + / -U _A -> .2.0 `f / * -> .3.0 `f _B -> .2.0 `f / * -> .3.0 `f _C -> .2.0 `f / _D -> .2.0 `f ]
+"226
+[v _b `f ~T0 @X0 1 a ]
+[; ;newmain.c: 226: float b = A - (5.0f*B) / 2.0f + 2.0f*C - D / 2.0f;
+[e = _b - + - _A / * -> .5.0 `f _B -> .2.0 `f * -> .2.0 `f _C / _D -> .2.0 `f ]
+"227
+[v _c `f ~T0 @X0 1 a ]
+[; ;newmain.c: 227: float c = -A / 2.0f + C / 2.0f;
+[e = _c + / -U _A -> .2.0 `f / _C -> .2.0 `f ]
+"228
+[v _d `f ~T0 @X0 1 a ]
+[; ;newmain.c: 228: float d = B;
+[e = _d _B ]
+[; ;newmain.c: 230: return a*t*t*t + b*t*t + c*t + d;
+"230
+[e ) + + + * * * _a _t _t _t * * _b _t _t * _c _t _d ]
+[e $UE 27  ]
+[; ;newmain.c: 231: }
+"231
+[e :UE 27 ]
+}
+"233
+[v _get_pixel_clamped `(v ~T0 @X0 1 ef4`*S14`i`i`*uc ]
+{
+[; ;newmain.c: 233: void get_pixel_clamped(PPMImage *source_image, int x, int y, uint8_t temp[]) {
+[e :U _get_pixel_clamped ]
+[v _source_image `*S14 ~T0 @X0 1 r1 ]
+[v _x `i ~T0 @X0 1 r2 ]
+[v _y `i ~T0 @X0 1 r3 ]
+[v _temp `*uc ~T0 @X0 1 r4 ]
+[f ]
+[; ;newmain.c: 234: if(x < 0) { x = 0; } else if(x > source_image->x - 1) { x = source_image->x - 1; };
+"234
+[e $ ! < _x -> 0 `i 29  ]
+{
+[e = _x -> 0 `i ]
+}
+[e $U 30  ]
+[e :U 29 ]
+[e $ ! > _x - . *U _source_image 0 -> 1 `i 31  ]
+{
+[e = _x - . *U _source_image 0 -> 1 `i ]
+}
+[e :U 31 ]
+[e :U 30 ]
+[; ;newmain.c: 235: if(y < 0) { y = 0; } else if(y > source_image->y - 1) { y = source_image->y - 1; };
+"235
+[e $ ! < _y -> 0 `i 32  ]
+{
+[e = _y -> 0 `i ]
+}
+[e $U 33  ]
+[e :U 32 ]
+[e $ ! > _y - . *U _source_image 1 -> 1 `i 34  ]
+{
+[e = _y - . *U _source_image 1 -> 1 `i ]
+}
+[e :U 34 ]
+[e :U 33 ]
+[; ;newmain.c: 237: temp[0] = source_image->data[x+(21*y)].red;
+"237
+[e = *U + _temp * -> -> 0 `i `x -> -> # *U _temp `i `x . *U + . *U _source_image 2 * -> + _x * -> 21 `i _y `x -> -> # *U . *U _source_image 2 `i `x 0 ]
+[; ;newmain.c: 238: temp[1] = source_image->data[x+(21*y)].green;
+"238
+[e = *U + _temp * -> -> 1 `i `x -> -> # *U _temp `i `x . *U + . *U _source_image 2 * -> + _x * -> 21 `i _y `x -> -> # *U . *U _source_image 2 `i `x 1 ]
+[; ;newmain.c: 239: temp[2] = source_image->data[x+(21*y)].blue;
+"239
+[e = *U + _temp * -> -> 2 `i `x -> -> # *U _temp `i `x . *U + . *U _source_image 2 * -> + _x * -> 21 `i _y `x -> -> # *U . *U _source_image 2 `i `x 2 ]
+[; ;newmain.c: 240: }
+"240
+[e :UE 28 ]
+}
+"242
+[v _sample_bicubic `(v ~T0 @X0 1 ef4`*S14`f`f`*uc ]
+{
+[; ;newmain.c: 242: void sample_bicubic(PPMImage *source_image, float u, float v, uint8_t sample[]) {
+[e :U _sample_bicubic ]
+[v _source_image `*S14 ~T0 @X0 1 r1 ]
+[v _u `f ~T0 @X0 1 r2 ]
+[v _v `f ~T0 @X0 1 r3 ]
+[v _sample `*uc ~T0 @X0 1 r4 ]
+[f ]
+"243
+[v _x `f ~T0 @X0 1 a ]
+[; ;newmain.c: 243: float x = (u * source_image->x)-0.5;
+[e = _x -> - -> * _u -> . *U _source_image 0 `f `d .0.5 `f ]
+"244
+[v _xint `i ~T0 @X0 1 a ]
+[; ;newmain.c: 244: int xint = (int)x;
+[e = _xint -> _x `i ]
+"245
+[v _xfract `f ~T0 @X0 1 a ]
+[; ;newmain.c: 245: float xfract = x-floorf(x);
+[e = _xfract - _x ( _floorf (1 _x ]
+"247
+[v _y `f ~T0 @X0 1 a ]
+[; ;newmain.c: 247: float y = (v * source_image->y) - 0.5;
+[e = _y -> - -> * _v -> . *U _source_image 1 `f `d .0.5 `f ]
+"248
+[v _yint `i ~T0 @X0 1 a ]
+[; ;newmain.c: 248: int yint = (int)y;
+[e = _yint -> _y `i ]
+"249
+[v _yfract `f ~T0 @X0 1 a ]
+[; ;newmain.c: 249: float yfract = y - floorf(y);
+[e = _yfract - _y ( _floorf (1 _y ]
+"251
+[v _i `i ~T0 @X0 1 a ]
+"253
+[v _p00 `uc ~T0 @X0 -> 3 `i a ]
+"254
+[v _p10 `uc ~T0 @X0 -> 3 `i a ]
+"255
+[v _p20 `uc ~T0 @X0 -> 3 `i a ]
+"256
+[v _p30 `uc ~T0 @X0 -> 3 `i a ]
+"258
+[v _p01 `uc ~T0 @X0 -> 3 `i a ]
+"259
+[v _p11 `uc ~T0 @X0 -> 3 `i a ]
+"260
+[v _p21 `uc ~T0 @X0 -> 3 `i a ]
+"261
+[v _p31 `uc ~T0 @X0 -> 3 `i a ]
+"263
+[v _p02 `uc ~T0 @X0 -> 3 `i a ]
+"264
+[v _p12 `uc ~T0 @X0 -> 3 `i a ]
+"265
+[v _p22 `uc ~T0 @X0 -> 3 `i a ]
+"266
+[v _p32 `uc ~T0 @X0 -> 3 `i a ]
+"268
+[v _p03 `uc ~T0 @X0 -> 3 `i a ]
+"269
+[v _p13 `uc ~T0 @X0 -> 3 `i a ]
+"270
+[v _p23 `uc ~T0 @X0 -> 3 `i a ]
+"271
+[v _p33 `uc ~T0 @X0 -> 3 `i a ]
+[; ;newmain.c: 251: int i;
+[; ;newmain.c: 253: uint8_t p00[3];
+[; ;newmain.c: 254: uint8_t p10[3];
+[; ;newmain.c: 255: uint8_t p20[3];
+[; ;newmain.c: 256: uint8_t p30[3];
+[; ;newmain.c: 258: uint8_t p01[3];
+[; ;newmain.c: 259: uint8_t p11[3];
+[; ;newmain.c: 260: uint8_t p21[3];
+[; ;newmain.c: 261: uint8_t p31[3];
+[; ;newmain.c: 263: uint8_t p02[3];
+[; ;newmain.c: 264: uint8_t p12[3];
+[; ;newmain.c: 265: uint8_t p22[3];
+[; ;newmain.c: 266: uint8_t p32[3];
+[; ;newmain.c: 268: uint8_t p03[3];
+[; ;newmain.c: 269: uint8_t p13[3];
+[; ;newmain.c: 270: uint8_t p23[3];
+[; ;newmain.c: 271: uint8_t p33[3];
+[; ;newmain.c: 275: get_pixel_clamped(source_image, xint - 1, yint - 1, p00);
+"275
+[e ( _get_pixel_clamped (4 , , , _source_image - _xint -> 1 `i - _yint -> 1 `i &U _p00 ]
+[; ;newmain.c: 276: get_pixel_clamped(source_image, xint + 0, yint - 1, p10);
+"276
+[e ( _get_pixel_clamped (4 , , , _source_image + _xint -> 0 `i - _yint -> 1 `i &U _p10 ]
+[; ;newmain.c: 277: get_pixel_clamped(source_image, xint + 1, yint - 1, p20);
+"277
+[e ( _get_pixel_clamped (4 , , , _source_image + _xint -> 1 `i - _yint -> 1 `i &U _p20 ]
+[; ;newmain.c: 278: get_pixel_clamped(source_image, xint + 2, yint - 1, p30);
+"278
+[e ( _get_pixel_clamped (4 , , , _source_image + _xint -> 2 `i - _yint -> 1 `i &U _p30 ]
+[; ;newmain.c: 281: get_pixel_clamped(source_image, xint - 1, yint + 0, p01);
+"281
+[e ( _get_pixel_clamped (4 , , , _source_image - _xint -> 1 `i + _yint -> 0 `i &U _p01 ]
+[; ;newmain.c: 282: get_pixel_clamped(source_image, xint + 0, yint + 0, p11);
+"282
+[e ( _get_pixel_clamped (4 , , , _source_image + _xint -> 0 `i + _yint -> 0 `i &U _p11 ]
+[; ;newmain.c: 283: get_pixel_clamped(source_image, xint + 1, yint + 0, p21);
+"283
+[e ( _get_pixel_clamped (4 , , , _source_image + _xint -> 1 `i + _yint -> 0 `i &U _p21 ]
+[; ;newmain.c: 284: get_pixel_clamped(source_image, xint + 2, yint + 0, p31);
+"284
+[e ( _get_pixel_clamped (4 , , , _source_image + _xint -> 2 `i + _yint -> 0 `i &U _p31 ]
+[; ;newmain.c: 287: get_pixel_clamped(source_image, xint - 1, yint + 1, p02);
+"287
+[e ( _get_pixel_clamped (4 , , , _source_image - _xint -> 1 `i + _yint -> 1 `i &U _p02 ]
+[; ;newmain.c: 288: get_pixel_clamped(source_image, xint + 0, yint + 1, p12);
+"288
+[e ( _get_pixel_clamped (4 , , , _source_image + _xint -> 0 `i + _yint -> 1 `i &U _p12 ]
+[; ;newmain.c: 289: get_pixel_clamped(source_image, xint + 1, yint + 1, p22);
+"289
+[e ( _get_pixel_clamped (4 , , , _source_image + _xint -> 1 `i + _yint -> 1 `i &U _p22 ]
+[; ;newmain.c: 290: get_pixel_clamped(source_image, xint + 2, yint + 1, p32);
+"290
+[e ( _get_pixel_clamped (4 , , , _source_image + _xint -> 2 `i + _yint -> 1 `i &U _p32 ]
+[; ;newmain.c: 293: get_pixel_clamped(source_image, xint - 1, yint + 2, p03);
+"293
+[e ( _get_pixel_clamped (4 , , , _source_image - _xint -> 1 `i + _yint -> 2 `i &U _p03 ]
+[; ;newmain.c: 294: get_pixel_clamped(source_image, xint + 0, yint + 2, p13);
+"294
+[e ( _get_pixel_clamped (4 , , , _source_image + _xint -> 0 `i + _yint -> 2 `i &U _p13 ]
+[; ;newmain.c: 295: get_pixel_clamped(source_image, xint + 1, yint + 2, p23);
+"295
+[e ( _get_pixel_clamped (4 , , , _source_image + _xint -> 1 `i + _yint -> 2 `i &U _p23 ]
+[; ;newmain.c: 296: get_pixel_clamped(source_image, xint + 2, yint + 2, p33);
+"296
+[e ( _get_pixel_clamped (4 , , , _source_image + _xint -> 2 `i + _yint -> 2 `i &U _p33 ]
+[; ;newmain.c: 299: for (i = 0; i < 3; i++) {
+"299
+{
+[e = _i -> 0 `i ]
+[e $ < _i -> 3 `i 36  ]
+[e $U 37  ]
+[e :U 36 ]
+{
+"300
+[v _col0 `f ~T0 @X0 1 a ]
+[; ;newmain.c: 300: float col0 = cubic_hermite(p00[i], p10[i], p20[i], p30[i], xfract);
+[e = _col0 ( _cubic_hermite (4 , , , , -> *U + &U _p00 * -> -> _i `ui `ux -> -> # *U &U _p00 `ui `ux `f -> *U + &U _p10 * -> -> _i `ui `ux -> -> # *U &U _p10 `ui `ux `f -> *U + &U _p20 * -> -> _i `ui `ux -> -> # *U &U _p20 `ui `ux `f -> *U + &U _p30 * -> -> _i `ui `ux -> -> # *U &U _p30 `ui `ux `f _xfract ]
+"301
+[v _col1 `f ~T0 @X0 1 a ]
+[; ;newmain.c: 301: float col1 = cubic_hermite(p01[i], p11[i], p21[i], p31[i], xfract);
+[e = _col1 ( _cubic_hermite (4 , , , , -> *U + &U _p01 * -> -> _i `ui `ux -> -> # *U &U _p01 `ui `ux `f -> *U + &U _p11 * -> -> _i `ui `ux -> -> # *U &U _p11 `ui `ux `f -> *U + &U _p21 * -> -> _i `ui `ux -> -> # *U &U _p21 `ui `ux `f -> *U + &U _p31 * -> -> _i `ui `ux -> -> # *U &U _p31 `ui `ux `f _xfract ]
+"302
+[v _col2 `f ~T0 @X0 1 a ]
+[; ;newmain.c: 302: float col2 = cubic_hermite(p02[i], p12[i], p22[i], p32[i], xfract);
+[e = _col2 ( _cubic_hermite (4 , , , , -> *U + &U _p02 * -> -> _i `ui `ux -> -> # *U &U _p02 `ui `ux `f -> *U + &U _p12 * -> -> _i `ui `ux -> -> # *U &U _p12 `ui `ux `f -> *U + &U _p22 * -> -> _i `ui `ux -> -> # *U &U _p22 `ui `ux `f -> *U + &U _p32 * -> -> _i `ui `ux -> -> # *U &U _p32 `ui `ux `f _xfract ]
+"303
+[v _col3 `f ~T0 @X0 1 a ]
+[; ;newmain.c: 303: float col3 = cubic_hermite(p03[i], p13[i], p23[i], p33[i], xfract);
+[e = _col3 ( _cubic_hermite (4 , , , , -> *U + &U _p03 * -> -> _i `ui `ux -> -> # *U &U _p03 `ui `ux `f -> *U + &U _p13 * -> -> _i `ui `ux -> -> # *U &U _p13 `ui `ux `f -> *U + &U _p23 * -> -> _i `ui `ux -> -> # *U &U _p23 `ui `ux `f -> *U + &U _p33 * -> -> _i `ui `ux -> -> # *U &U _p33 `ui `ux `f _xfract ]
+"305
+[v _value `f ~T0 @X0 1 a ]
+[; ;newmain.c: 305: float value = cubic_hermite(col0, col1, col2, col3, yfract);
+[e = _value ( _cubic_hermite (4 , , , , _col0 _col1 _col2 _col3 _yfract ]
+[; ;newmain.c: 307: if(value < 0.0f) { value = 0.0f; } else if(value > 255.0f) { value = 255.0f; };
+"307
+[e $ ! < _value -> .0.0 `f 39  ]
+{
+[e = _value -> .0.0 `f ]
+}
+[e $U 40  ]
+[e :U 39 ]
+[e $ ! > _value -> .255.0 `f 41  ]
+{
+[e = _value -> .255.0 `f ]
+}
+[e :U 41 ]
+[e :U 40 ]
+[; ;newmain.c: 309: sample[i] = (uint8_t)value;
+"309
+[e = *U + _sample * -> _i `x -> -> # *U _sample `i `x -> _value `uc ]
+"313
+}
+"299
+[e ++ _i -> 1 `i ]
+[e $ < _i -> 3 `i 36  ]
+[e :U 37 ]
+"313
+}
+[; ;newmain.c: 313: }
+[; ;newmain.c: 315: }
+"315
+[e :UE 35 ]
+}
+"318
+[v _resize_image `(v ~T0 @X0 1 ef3`*S14`*S14`f ]
+{
+[; ;newmain.c: 318: void resize_image(PPMImage *source_image, PPMImage *destination_image, float scale) {
+[e :U _resize_image ]
+[v _source_image `*S14 ~T0 @X0 1 r1 ]
+[v _destination_image `*S14 ~T0 @X0 1 r2 ]
+[v _scale `f ~T0 @X0 1 r3 ]
+[f ]
+"319
+[v _sample `uc ~T0 @X0 -> 3 `i a ]
+"320
+[v _y `i ~T0 @X0 1 a ]
+[v _x `i ~T0 @X0 1 a ]
+[; ;newmain.c: 319: uint8_t sample[3];
+[; ;newmain.c: 320: int y, x;
+[; ;newmain.c: 322: destination_image->x = (long)((float)(source_image->x)*scale);
+"322
+[e = . *U _destination_image 0 -> -> * -> . *U _source_image 0 `f _scale `l `i ]
+[; ;newmain.c: 323: destination_image->y = (long)((float)(source_image->y)*scale);
+"323
+[e = . *U _destination_image 1 -> -> * -> . *U _source_image 1 `f _scale `l `i ]
+[; ;newmain.c: 325: for (y = 0; y < destination_image->y; y++) {
+"325
+{
+[e = _y -> 0 `i ]
+[e $U 46  ]
+[e :U 43 ]
+{
+"327
+[v _v `f ~T0 @X0 1 a ]
+[; ;newmain.c: 327: float v = (float)y / (float)(destination_image->y - 1);
+[e = _v / -> _y `f -> - . *U _destination_image 1 -> 1 `i `f ]
+[; ;newmain.c: 329: for (x = 0; x < destination_image->x; ++x) {
+"329
+{
+[e = _x -> 0 `i ]
+[e $U 50  ]
+[e :U 47 ]
+{
+"331
+[v _u `f ~T0 @X0 1 a ]
+[; ;newmain.c: 331: float u = (float)x / (float)(destination_image->x - 1);
+[e = _u / -> _x `f -> - . *U _destination_image 0 -> 1 `i `f ]
+[; ;newmain.c: 333: sample_bicubic(source_image, u, v, sample);
+"333
+[e ( _sample_bicubic (4 , , , _source_image _u _v &U _sample ]
+[; ;newmain.c: 335: writeSerial(sample);
+"335
+[e ( _writeSerial (1 &U _sample ]
+"340
+}
+"329
+[e =+ _x -> 1 `i ]
+[e :U 50 ]
+[e $ < _x . *U _destination_image 0 47  ]
+[e :U 48 ]
+"340
+}
+"341
+}
+"325
+[e ++ _y -> 1 `i ]
+[e :U 46 ]
+[e $ < _y . *U _destination_image 1 43  ]
+[e :U 44 ]
+"341
+}
+[; ;newmain.c: 340: }
+[; ;newmain.c: 341: }
+[; ;newmain.c: 342: }
+"342
+[e :UE 42 ]
+}
+"344
+[v _get_scale `(f ~T0 @X0 1 ef ]
+{
+[; ;newmain.c: 344: float get_scale(){
+[e :U _get_scale ]
+[f ]
+"345
+[v _scale `f ~T0 @X0 1 a ]
+[; ;newmain.c: 345: float scale;
+[; ;newmain.c: 346: printf("Digite uma escala(float): ");
+"346
+[e ( _printf :s 15C ]
+[; ;newmain.c: 347: scanf("%f", &scale);
+"347
+[e ( _scanf , (. :s 16C &U _scale ]
+[; ;newmain.c: 348: return scale;
+"348
+[e ) _scale ]
+[e $UE 51  ]
+[; ;newmain.c: 349: }
+"349
+[e :UE 51 ]
+}
+[v $root$_main `(v ~T0 @X0 0 e ]
+"352
+[v _main `(i ~T0 @X0 1 ef ]
+{
+[; ;newmain.c: 352: int main() {
+[e :U _main ]
+[f ]
+"354
+[v _tempo `l ~T0 @X0 1 a ]
+"357
+[v F1100 `Cf ~T0 @X0 1 s scale ]
+[i F1100
+-> -> 2 `i `f
+]
+[; ;newmain.c: 354: clock_t tempo;
+[; ;newmain.c: 357: const float scale = 2;
+[; ;newmain.c: 359: tempo = clock();
+"359
+[e = _tempo ( _clock ..  ]
+"365
+[v _source_image `S14 ~T0 @X0 1 a ]
+"366
+[v _destination_image `S14 ~T0 @X0 1 a ]
+[; ;newmain.c: 365: PPMImage source_image;
+[; ;newmain.c: 366: PPMImage destination_image;
+[; ;newmain.c: 372: if(remove("imgs/lozman_out.ppm") == 0)
+"372
+[e $ ! == ( _remove (1 :s 17C -> 0 `i 53  ]
+[; ;newmain.c: 373: printf("Deleting old image...\n\n");
+"373
+[e ( _printf :s 18C ]
+[e :U 53 ]
+[; ;newmain.c: 376: readPPM(&source_image, "imgs/lozman.ppm");
+"376
+[e ( _readPPM (2 , &U _source_image :s 19C ]
+[; ;newmain.c: 379: resize_image(&source_image, &destination_image, scale);
+"379
+[e ( _resize_image (3 , , &U _source_image &U _destination_image F1100 ]
+[; ;newmain.c: 384: printf("Tempo de interpolacao(ms): %f\n",(clock() - tempo) / (double)1000000L);
+"384
+[e ( _printf , (. :s 20C / -> - ( _clock ..  _tempo `d -> -> 1000000 `l `d ]
+[; ;newmain.c: 385: }
+"385
+[e :UE 52 ]
+}
+[p f _printf 8659072 ]
+[a 17C 105 109 103 115 47 108 111 122 109 97 110 95 111 117 116 46 112 112 109 0 ]
+[a 19C 105 109 103 115 47 108 111 122 109 97 110 46 112 112 109 0 ]
+[a 16C 37 102 0 ]
+[a 2C 37 100 32 37 100 0 ]
+[a 6C 99 104 114 101 97 100 32 51 58 32 37 100 0 ]
+[a 4C 37 100 0 ]
+[a 8C 119 98 0 ]
+[a 12C 70 69 76 73 88 75 76 69 77 77 0 ]
+[a 15C 68 105 103 105 116 101 32 117 109 97 32 101 115 99 97 108 97 40 102 108 111 97 116 41 58 32 0 ]
+[a 7C 39 37 115 39 32 100 111 101 115 32 110 111 116 32 104 97 118 101 32 56 45 98 105 116 115 32 99 111 109 112 111 110 101 110 116 115 10 0 ]
+[a 11C 35 32 67 114 101 97 116 101 100 32 98 121 32 37 115 10 0 ]
+[a 3C 99 104 114 101 97 100 32 50 58 32 37 115 10 0 ]
+[a 20C 84 101 109 112 111 32 100 101 32 105 110 116 101 114 112 111 108 97 99 97 111 40 109 115 41 58 32 37 102 10 0 ]
+[a 13C 37 100 32 37 100 10 0 ]
+[a 5C 114 103 98 95 99 111 109 112 95 99 111 108 111 114 58 32 37 100 10 0 ]
+[a 14C 37 100 10 0 ]
+[a 10C 80 54 10 0 ]
+[a 1C 73 110 118 97 108 105 100 32 105 109 97 103 101 32 102 111 114 109 97 116 32 40 109 117 115 116 32 98 101 32 39 80 54 39 41 10 0 ]
+[a 9C 85 110 97 98 108 101 32 116 111 32 111 112 101 110 32 102 105 108 101 32 39 37 115 39 10 0 ]
+[a 18C 68 101 108 101 116 105 110 103 32 111 108 100 32 105 109 97 103 101 46 46 46 10 10 0 ]
