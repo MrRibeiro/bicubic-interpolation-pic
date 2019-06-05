@@ -1,0 +1,582 @@
+[p LITE_MODE AUTOSTATIC IEEE_DBL IEEE_FLT PIC14 PIC14E ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 16F18875 ]
+[d frameptr 6 ]
+"5 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\atoi.c
+[v _atoi atoi `(i  1 e 2 0 ]
+"5 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+"472 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\doprnt.c
+[v _printf printf `(i  1 e 2 0 ]
+"4 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\fleq.c
+[v ___fleq __fleq `(b  1 e 0 0 ]
+"4 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\flge.c
+[v ___flge __flge `(b  1 e 0 0 ]
+"15 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\flneg.c
+[v ___flneg __flneg `(d  1 e 4 0 ]
+"13 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\floor.c
+[v _floor floor `(d  1 e 4 0 ]
+"43 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\fltol.c
+[v ___fltol __fltol `(l  1 e 4 0 ]
+"254 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\frexp.c
+[v _frexp frexp `(d  1 e 4 0 ]
+"8 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\isdigit.c
+[v _isdigit isdigit `(b  1 e 0 0 ]
+"5 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\lwdiv.c
+[v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
+"5 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\lwmod.c
+[v ___lwmod __lwmod `(ui  1 e 2 0 ]
+"7 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\putch.c
+[v _putch putch `(v  1 e 1 0 ]
+"10 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"8 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\sprcdiv.c
+[v ___fldiv __fldiv `(d  1 e 4 0 ]
+"8 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\sprcmul.c
+[v ___flmul __flmul `(d  1 e 4 0 ]
+"15 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
+"4 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\Umul8_16.c
+[v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
+"10 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\xxtofl.c
+[v ___xxtofl __xxtofl `(d  1 e 4 0 ]
+"6 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\pic\__eeprom.c
+[v ___eecpymem __eecpymem `(v  1 e 1 0 ]
+"39
+[v ___memcpyee __memcpyee `(v  1 e 1 0 ]
+"103 C:\Users\Alunos\Documents\sembprojs\bicupic\bicupic.X\newmain.c
+[v _mem_copy mem_copy `(v  1 e 1 0 ]
+"112
+[v _readPPM readPPM `(v  1 s 1 readPPM ]
+"209
+[v _writeSerial writeSerial `(v  1 e 1 0 ]
+"241
+[v _cubic_hermite cubic_hermite `(i  1 e 2 0 ]
+"252
+[v _get_pixel_clamped get_pixel_clamped `(v  1 e 1 0 ]
+"261
+[v _sample_bicubic sample_bicubic `(v  1 e 1 0 ]
+"337
+[v _resize_image resize_image `(v  1 e 1 0 ]
+"371
+[v _main main `(i  1 e 2 0 ]
+"21 C:\Users\Alunos\Documents\sembprojs\bicupic\bicupic.X\uart.h
+[v _UART_iniciar UART_iniciar `(v  1 e 1 0 ]
+"40
+[v _UART_Ler UART_Ler `(uc  1 e 1 0 ]
+"62
+[v _UART_Escrever UART_Escrever `(v  1 e 1 0 ]
+"78
+[v _UART_Escrever_Buffer UART_Escrever_Buffer `(v  1 e 1 0 ]
+"3775 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f18875.h
+[v _RCREG RCREG `VEuc  1 e 1 @281 ]
+"3833
+[v _TXREG TXREG `VEuc  1 e 1 @282 ]
+"3890
+[v _SPBRG SPBRG `VEuc  1 e 1 @283 ]
+[s S107 . 1 `uc 1 RX9D 1 0 :1:0 
+`uc 1 OERR 1 0 :1:1 
+`uc 1 FERR 1 0 :1:2 
+`uc 1 ADDEN 1 0 :1:3 
+`uc 1 CREN 1 0 :1:4 
+`uc 1 SREN 1 0 :1:5 
+`uc 1 RX9 1 0 :1:6 
+`uc 1 SPEN 1 0 :1:7 
+]
+"4035
+[u S116 . 1 `S107 1 . 1 0 ]
+[v _RC1STAbits RC1STAbits `VES116  1 e 1 @285 ]
+[s S64 . 1 `uc 1 TX9D 1 0 :1:0 
+`uc 1 TRMT 1 0 :1:1 
+`uc 1 BRGH 1 0 :1:2 
+`uc 1 SENDB 1 0 :1:3 
+`uc 1 SYNC 1 0 :1:4 
+`uc 1 TXEN 1 0 :1:5 
+`uc 1 TX9 1 0 :1:6 
+`uc 1 CSRC 1 0 :1:7 
+]
+"4215
+[u S73 . 1 `S64 1 . 1 0 ]
+[v _TX1STAbits TX1STAbits `VES73  1 e 1 @286 ]
+[s S85 . 1 `uc 1 ABDEN 1 0 :1:0 
+`uc 1 WUE 1 0 :1:1 
+`uc 1 . 1 0 :1:2 
+`uc 1 BRG16 1 0 :1:3 
+`uc 1 SCKP 1 0 :1:4 
+`uc 1 . 1 0 :1:5 
+`uc 1 RCIDL 1 0 :1:6 
+`uc 1 ABDOVF 1 0 :1:7 
+]
+"4448
+[u S94 . 1 `S85 1 . 1 0 ]
+[v _BAUDCON1bits BAUDCON1bits `VES94  1 e 1 @287 ]
+[s S44 . 1 `uc 1 RXPPS0 1 0 :1:0 
+`uc 1 RXPPS1 1 0 :1:1 
+`uc 1 RXPPS2 1 0 :1:2 
+`uc 1 RXPPS3 1 0 :1:3 
+`uc 1 RXPPS4 1 0 :1:4 
+]
+"32001
+[s S50 . 1 `uc 1 RXPPS 1 0 :5:0 
+]
+[u S52 . 1 `S44 1 . 1 0 `S50 1 . 1 0 ]
+[v _RXPPSbits RXPPSbits `VES52  1 e 1 @3787 ]
+"33188
+[v _RC6PPS RC6PPS `VEuc  1 e 1 @3878 ]
+[s S22 . 1 `uc 1 ANSC0 1 0 :1:0 
+`uc 1 ANSC1 1 0 :1:1 
+`uc 1 ANSC2 1 0 :1:2 
+`uc 1 ANSC3 1 0 :1:3 
+`uc 1 ANSC4 1 0 :1:4 
+`uc 1 ANSC5 1 0 :1:5 
+`uc 1 ANSC6 1 0 :1:6 
+`uc 1 ANSC7 1 0 :1:7 
+]
+"35095
+[u S31 . 1 `S22 1 . 1 0 ]
+"35095
+"35095
+[v _ANSELCbits ANSELCbits `VES31  1 e 1 @3918 ]
+"42006
+[v _RCIF RCIF `VEb  1 e 0 @14461 ]
+"358 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\doprnt.c
+[v _dpowers dpowers `DC[5]ui  1 s 10 dpowers ]
+"9 C:\Users\Alunos\Documents\sembprojs\bicupic\bicupic.X\newmain.c
+[v _sourcef sourcef `DC[1274]uc  1 e 1274 0 ]
+"371
+[v _main main `(i  1 e 2 0 ]
+{
+[s S131 . 3 `uc 1 red 1 0 `uc 1 green 1 1 `uc 1 blue 1 2 ]
+"391
+[s S135 . 6 `i 1 x 2 0 `i 1 y 2 2 `*.25S131 1 data 2 4 ]
+[v main@source_image source_image `S135  1 a 6 27 ]
+"392
+[v main@destination_image destination_image `S135  1 a 6 21 ]
+"376
+[v main@i i `i  1 a 2 19 ]
+"383
+[v main@scale scale `DCi  1 s 2 scale ]
+"415
+} 0
+"337
+[v _resize_image resize_image `(v  1 e 1 0 ]
+{
+[s S131 . 3 `uc 1 red 1 0 `uc 1 green 1 1 `uc 1 blue 1 2 ]
+[s S135 . 6 `i 1 x 2 0 `i 1 y 2 2 `*.25S131 1 data 2 4 ]
+[v resize_image@source_image source_image `*.5S135  1 a 1 wreg ]
+"350
+[v resize_image@u u `i  1 a 2 11 ]
+"346
+[v resize_image@v v `i  1 a 2 9 ]
+"338
+[v resize_image@sample sample `[3]uc  1 a 3 6 ]
+"339
+[v resize_image@x x `i  1 a 2 15 ]
+[v resize_image@y y `i  1 a 2 13 ]
+"337
+[v resize_image@source_image source_image `*.5S135  1 a 1 wreg ]
+[v resize_image@destination_image destination_image `*.5S135  1 p 1 0 ]
+[v resize_image@scale scale `i  1 p 2 1 ]
+"341
+"337
+[v resize_image@source_image source_image `*.5S135  1 a 1 17 ]
+"361
+} 0
+"209
+[v _writeSerial writeSerial `(v  1 e 1 0 ]
+{
+[v writeSerial@sample sample `*.5uc  1 a 1 wreg ]
+[v writeSerial@sample sample `*.5uc  1 a 1 wreg ]
+[v writeSerial@sample sample `*.5uc  1 a 1 7 ]
+"211
+} 0
+"78 C:\Users\Alunos\Documents\sembprojs\bicupic\bicupic.X\uart.h
+[v _UART_Escrever_Buffer UART_Escrever_Buffer `(v  1 e 1 0 ]
+{
+[v UART_Escrever_Buffer@buff buff `*.5uc  1 a 1 wreg ]
+"79
+[v UART_Escrever_Buffer@i i `i  1 a 2 5 ]
+"78
+[v UART_Escrever_Buffer@buff buff `*.5uc  1 a 1 wreg ]
+[v UART_Escrever_Buffer@size size `i  1 p 2 1 ]
+"80
+[v UART_Escrever_Buffer@buff buff `*.5uc  1 a 1 4 ]
+"82
+} 0
+"62
+[v _UART_Escrever UART_Escrever `(v  1 e 1 0 ]
+{
+[v UART_Escrever@c c `uc  1 a 1 wreg ]
+[v UART_Escrever@c c `uc  1 a 1 wreg ]
+[v UART_Escrever@c c `uc  1 a 1 0 ]
+"65
+} 0
+"261 C:\Users\Alunos\Documents\sembprojs\bicupic\bicupic.X\newmain.c
+[v _sample_bicubic sample_bicubic `(v  1 e 1 0 ]
+{
+[s S131 . 3 `uc 1 red 1 0 `uc 1 green 1 1 `uc 1 blue 1 2 ]
+[s S135 . 6 `i 1 x 2 0 `i 1 y 2 2 `*.25S131 1 data 2 4 ]
+[v sample_bicubic@source_image source_image `*.5S135  1 a 1 wreg ]
+"324
+[v sample_bicubic@value value `i  1 a 2 70 ]
+"322
+[v sample_bicubic@col3 col3 `i  1 a 2 56 ]
+"321
+[v sample_bicubic@col2 col2 `i  1 a 2 54 ]
+"320
+[v sample_bicubic@col1 col1 `i  1 a 2 52 ]
+"319
+[v sample_bicubic@col0 col0 `i  1 a 2 50 ]
+"290
+[v sample_bicubic@p33 p33 `[3]uc  1 a 3 45 ]
+"289
+[v sample_bicubic@p23 p23 `[3]uc  1 a 3 42 ]
+"288
+[v sample_bicubic@p13 p13 `[3]uc  1 a 3 39 ]
+"287
+[v sample_bicubic@p03 p03 `[3]uc  1 a 3 36 ]
+"285
+[v sample_bicubic@p32 p32 `[3]uc  1 a 3 33 ]
+"284
+[v sample_bicubic@p22 p22 `[3]uc  1 a 3 30 ]
+"283
+[v sample_bicubic@p12 p12 `[3]uc  1 a 3 27 ]
+"282
+[v sample_bicubic@p02 p02 `[3]uc  1 a 3 24 ]
+"280
+[v sample_bicubic@p31 p31 `[3]uc  1 a 3 21 ]
+"279
+[v sample_bicubic@p21 p21 `[3]uc  1 a 3 18 ]
+"278
+[v sample_bicubic@p11 p11 `[3]uc  1 a 3 15 ]
+"277
+[v sample_bicubic@p01 p01 `[3]uc  1 a 3 12 ]
+"275
+[v sample_bicubic@p30 p30 `[3]uc  1 a 3 9 ]
+"274
+[v sample_bicubic@p20 p20 `[3]uc  1 a 3 6 ]
+"273
+[v sample_bicubic@p10 p10 `[3]uc  1 a 3 3 ]
+"272
+[v sample_bicubic@p00 p00 `[3]uc  1 a 3 0 ]
+"270
+[v sample_bicubic@i i `i  1 a 2 78 ]
+"267
+[v sample_bicubic@yint yint `i  1 a 2 76 ]
+"263
+[v sample_bicubic@xint xint `i  1 a 2 74 ]
+"264
+[v sample_bicubic@xfract xfract `i  1 a 2 72 ]
+"266
+[v sample_bicubic@y y `i  1 a 2 68 ]
+"262
+[v sample_bicubic@x x `i  1 a 2 66 ]
+"268
+[v sample_bicubic@yfract yfract `i  1 a 2 48 ]
+"261
+[v sample_bicubic@source_image source_image `*.5S135  1 a 1 wreg ]
+[v sample_bicubic@u u `i  1 p 2 66 ]
+[v sample_bicubic@v v `i  1 p 2 68 ]
+[v sample_bicubic@sample sample `*.5uc  1 p 1 70 ]
+[v sample_bicubic@source_image source_image `*.5S135  1 a 1 79 ]
+"334
+} 0
+"252
+[v _get_pixel_clamped get_pixel_clamped `(v  1 e 1 0 ]
+{
+[s S131 . 3 `uc 1 red 1 0 `uc 1 green 1 1 `uc 1 blue 1 2 ]
+[s S135 . 6 `i 1 x 2 0 `i 1 y 2 2 `*.25S131 1 data 2 4 ]
+[v get_pixel_clamped@source_image source_image `*.5S135  1 a 1 wreg ]
+[v get_pixel_clamped@source_image source_image `*.5S135  1 a 1 wreg ]
+[v get_pixel_clamped@x x `i  1 p 2 6 ]
+[v get_pixel_clamped@y y `i  1 p 2 8 ]
+[v get_pixel_clamped@temp temp `*.5uc  1 p 1 10 ]
+[v get_pixel_clamped@source_image source_image `*.5S135  1 a 1 13 ]
+"259
+} 0
+"13 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\floor.c
+[v _floor floor `(d  1 e 4 0 ]
+{
+"15
+[v floor@i i `d  1 a 4 18 ]
+"16
+[v floor@expon expon `i  1 a 2 22 ]
+"13
+[v floor@x x `d  1 p 4 13 ]
+"30
+} 0
+"254 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\frexp.c
+[v _frexp frexp `(d  1 e 4 0 ]
+{
+[v frexp@value value `d  1 p 4 0 ]
+[v frexp@eptr eptr `*.4i  1 p 1 4 ]
+"274
+} 0
+"4 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\fleq.c
+[v ___fleq __fleq `(b  1 e 0 0 ]
+{
+[v ___fleq@ff1 ff1 `d  1 p 4 0 ]
+[v ___fleq@ff2 ff2 `d  1 p 4 4 ]
+"12
+} 0
+"4 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\flge.c
+[v ___flge __flge `(b  1 e 0 0 ]
+{
+[v ___flge@ff1 ff1 `d  1 p 4 6 ]
+[v ___flge@ff2 ff2 `d  1 p 4 10 ]
+"19
+} 0
+"241 C:\Users\Alunos\Documents\sembprojs\bicupic\bicupic.X\newmain.c
+[v _cubic_hermite cubic_hermite `(i  1 e 2 0 ]
+{
+"247
+[v cubic_hermite@d d `i  1 a 2 50 ]
+"246
+[v cubic_hermite@c c `i  1 a 2 48 ]
+"245
+[v cubic_hermite@b b `i  1 a 2 46 ]
+"244
+[v cubic_hermite@a a `i  1 a 2 44 ]
+"241
+[v cubic_hermite@A A `i  1 p 2 28 ]
+[v cubic_hermite@B B `i  1 p 2 30 ]
+[v cubic_hermite@C C `i  1 p 2 32 ]
+[v cubic_hermite@D D `i  1 p 2 34 ]
+[v cubic_hermite@t t `i  1 p 2 36 ]
+"250
+} 0
+"10 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\xxtofl.c
+[v ___xxtofl __xxtofl `(d  1 e 4 0 ]
+{
+[v ___xxtofl@sign sign `uc  1 a 1 wreg ]
+"13
+[v ___xxtofl@arg arg `ul  1 a 4 2 ]
+"12
+[v ___xxtofl@exp exp `uc  1 a 1 1 ]
+"10
+[v ___xxtofl@sign sign `uc  1 a 1 wreg ]
+[v ___xxtofl@val val `l  1 p 4 6 ]
+"15
+[v ___xxtofl@sign sign `uc  1 a 1 0 ]
+"44
+} 0
+"43 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\fltol.c
+[v ___fltol __fltol `(l  1 e 4 0 ]
+{
+"45
+[v ___fltol@exp1 exp1 `uc  1 a 1 79 ]
+[v ___fltol@sign1 sign1 `uc  1 a 1 78 ]
+"43
+[v ___fltol@f1 f1 `d  1 p 4 4 ]
+"70
+} 0
+"15 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\flneg.c
+[v ___flneg __flneg `(d  1 e 4 0 ]
+{
+[v ___flneg@f1 f1 `d  1 p 4 24 ]
+"20
+} 0
+"8 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\sprcmul.c
+[v ___flmul __flmul `(d  1 e 4 0 ]
+{
+[s S621 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
+"13
+[s S626 . 4 `i 1 wordA 2 0 `i 1 wordB 2 2 ]
+[u S629 . 4 `l 1 i 4 0 `d 1 f 4 0 `S621 1 fAsBytes 4 0 `S626 1 fAsWords 4 0 ]
+[v ___flmul@prod prod `S629  1 a 4 26 ]
+"12
+[v ___flmul@grs grs `ul  1 a 4 20 ]
+[s S698 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
+"14
+[u S701 . 2 `i 1 i 2 0 `ui 1 n 2 0 `S698 1 nAsBytes 2 0 ]
+[v ___flmul@temp temp `S701  1 a 2 30 ]
+"10
+[v ___flmul@bexp bexp `uc  1 a 1 25 ]
+"11
+[v ___flmul@aexp aexp `uc  1 a 1 24 ]
+"9
+[v ___flmul@sign sign `uc  1 a 1 19 ]
+"8
+[v ___flmul@b b `d  1 p 4 6 ]
+[v ___flmul@a a `d  1 p 4 10 ]
+"205
+} 0
+"4 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\Umul8_16.c
+[v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
+{
+[v __Umul8_16@multiplier multiplier `uc  1 a 1 wreg ]
+"6
+[v __Umul8_16@word_mpld word_mpld `ui  1 a 2 6 ]
+"5
+[v __Umul8_16@product product `ui  1 a 2 4 ]
+"4
+[v __Umul8_16@multiplier multiplier `uc  1 a 1 wreg ]
+[v __Umul8_16@multiplicand multiplicand `uc  1 p 1 0 ]
+[v __Umul8_16@multiplier multiplier `uc  1 a 1 8 ]
+"60
+} 0
+"8 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\sprcdiv.c
+[v ___fldiv __fldiv `(d  1 e 4 0 ]
+{
+"21
+[v ___fldiv@grs grs `ul  1 a 4 52 ]
+"22
+[v ___fldiv@rem rem `ul  1 a 4 45 ]
+"20
+[v ___fldiv@new_exp new_exp `i  1 a 2 50 ]
+"19
+[v ___fldiv@aexp aexp `uc  1 a 1 57 ]
+"18
+[v ___fldiv@bexp bexp `uc  1 a 1 56 ]
+"16
+[v ___fldiv@sign sign `uc  1 a 1 49 ]
+"8
+[v ___fldiv@a a `d  1 p 4 32 ]
+[v ___fldiv@b b `d  1 p 4 36 ]
+"185
+} 0
+"10 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+{
+"17
+[v ___fladd@grs grs `uc  1 a 1 3 ]
+"15
+[v ___fladd@bexp bexp `uc  1 a 1 2 ]
+"16
+[v ___fladd@aexp aexp `uc  1 a 1 1 ]
+"13
+[v ___fladd@signs signs `uc  1 a 1 0 ]
+"10
+[v ___fladd@b b `d  1 p 4 58 ]
+[v ___fladd@a a `d  1 p 4 62 ]
+"237
+} 0
+"5 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+{
+"10
+[v ___awdiv@quotient quotient `i  1 a 2 7 ]
+"11
+[v ___awdiv@sign sign `uc  1 a 1 6 ]
+[v ___awdiv@counter counter `uc  1 a 1 5 ]
+"5
+[v ___awdiv@divisor divisor `i  1 p 2 0 ]
+[v ___awdiv@dividend dividend `i  1 p 2 2 ]
+"41
+} 0
+"112 C:\Users\Alunos\Documents\sembprojs\bicupic\bicupic.X\newmain.c
+[v _readPPM readPPM `(v  1 s 1 readPPM ]
+{
+[s S131 . 3 `uc 1 red 1 0 `uc 1 green 1 1 `uc 1 blue 1 2 ]
+[s S135 . 6 `i 1 x 2 0 `i 1 y 2 2 `*.25S131 1 data 2 4 ]
+[v readPPM@img img `*.5S135  1 a 1 wreg ]
+"114
+[v readPPM@buff buff `[16]uc  1 a 16 22 ]
+"117
+[v readPPM@chread chread `i  1 a 2 41 ]
+"116
+[v readPPM@rgb_comp_color rgb_comp_color `i  1 a 2 38 ]
+"112
+[v readPPM@img img `*.5S135  1 a 1 wreg ]
+[v readPPM@filename filename `*.25DCuc  1 p 2 16 ]
+"117
+"112
+[v readPPM@img img `*.5S135  1 a 1 40 ]
+"207
+} 0
+"472 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\doprnt.c
+[v _printf printf `(i  1 e 2 0 ]
+{
+"540
+[v printf@val val `ui  1 a 2 13 ]
+"542
+[v printf@cp cp `*.26DCuc  1 a 2 11 ]
+"507
+[v printf@c c `uc  1 a 1 15 ]
+"474
+[v printf@ap ap `[1]*.4v  1 a 1 10 ]
+"516
+[v printf@prec prec `c  1 a 1 9 ]
+"520
+[v printf@flag flag `uc  1 a 1 8 ]
+"472
+[v printf@f f `*.25DCuc  1 p 2 0 ]
+"1560
+} 0
+"7 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\putch.c
+[v _putch putch `(v  1 e 1 0 ]
+{
+"9
+} 0
+"5 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\lwmod.c
+[v ___lwmod __lwmod `(ui  1 e 2 0 ]
+{
+"10
+[v ___lwmod@counter counter `uc  1 a 1 13 ]
+"5
+[v ___lwmod@divisor divisor `ui  1 p 2 8 ]
+[v ___lwmod@dividend dividend `ui  1 p 2 10 ]
+"25
+} 0
+"5 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\lwdiv.c
+[v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
+{
+"10
+[v ___lwdiv@quotient quotient `ui  1 a 2 5 ]
+"11
+[v ___lwdiv@counter counter `uc  1 a 1 7 ]
+"5
+[v ___lwdiv@divisor divisor `ui  1 p 2 0 ]
+[v ___lwdiv@dividend dividend `ui  1 p 2 2 ]
+"30
+} 0
+"103 C:\Users\Alunos\Documents\sembprojs\bicupic\bicupic.X\newmain.c
+[v _mem_copy mem_copy `(v  1 e 1 0 ]
+{
+[v mem_copy@buff buff `*.4uc  1 a 1 wreg ]
+"104
+[v mem_copy@i i `i  1 a 2 7 ]
+"103
+[v mem_copy@buff buff `*.4uc  1 a 1 wreg ]
+[v mem_copy@source source `*.25DCuc  1 p 2 0 ]
+[v mem_copy@size size `i  1 p 2 2 ]
+"106
+[v mem_copy@buff buff `*.4uc  1 a 1 6 ]
+"109
+} 0
+"5 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\atoi.c
+[v _atoi atoi `(i  1 e 2 0 ]
+{
+"7
+[v atoi@a a `i  1 a 2 11 ]
+"8
+[v atoi@sign sign `uc  1 a 1 10 ]
+"5
+[v atoi@s s `*.25DCuc  1 p 2 6 ]
+"24
+} 0
+"8 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\isdigit.c
+[v _isdigit isdigit `(b  1 e 0 0 ]
+{
+[v isdigit@c c `uc  1 a 1 wreg ]
+[v isdigit@c c `uc  1 a 1 wreg ]
+"14
+[v isdigit@c c `uc  1 a 1 1 ]
+"15
+} 0
+"15 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
+{
+"17
+[v ___wmul@product product `ui  1 a 2 4 ]
+"15
+[v ___wmul@multiplier multiplier `ui  1 p 2 0 ]
+[v ___wmul@multiplicand multiplicand `ui  1 p 2 2 ]
+"53
+} 0
+"21 C:\Users\Alunos\Documents\sembprojs\bicupic\bicupic.X\uart.h
+[v _UART_iniciar UART_iniciar `(v  1 e 1 0 ]
+{
+"33
+} 0
